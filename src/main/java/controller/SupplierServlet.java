@@ -9,7 +9,7 @@ import javax.servlet.annotation.*;
 import java.io.IOException;
 import java.util.List;
 
-@WebServlet(name = "SupplierServlet", urlPatterns = "/SupplierServlet")
+@WebServlet(name = "SupplierServlet", urlPatterns = {"/SupplierServlet", "/"})
 public class SupplierServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String action = request.getParameter("action");
@@ -18,23 +18,23 @@ public class SupplierServlet extends HttpServlet {
 
         switch (action) {
             case "new":
-                request.getRequestDispatcher("supplier-form.jsp").forward(request, response);
+                request.getRequestDispatcher("/supplier-form.jsp").forward(request, response);
                 break;
             case "edit":
                 int id = Integer.parseInt(request.getParameter("id"));
                 Supplier supplier = SupplierDAO.getSupplierById(id);
                 request.setAttribute("supplier", supplier);
-                request.getRequestDispatcher("supplier-form.jsp").forward(request, response);
+                request.getRequestDispatcher("/supplier-form.jsp").forward(request, response);
                 break;
             case "delete":
                 int deleteId = Integer.parseInt(request.getParameter("id"));
                 SupplierDAO.deleteSupplier(deleteId);
-                response.sendRedirect("SupplierServlet");
+                response.sendRedirect(request.getContextPath() + "/SupplierServlet");
                 break;
             default:
                 List<Supplier> suppliers = SupplierDAO.getAllSuppliers();
                 request.setAttribute("supplierList", suppliers);
-                request.getRequestDispatcher("supplier-list.jsp").forward(request, response);
+                request.getRequestDispatcher("/supplier-list.jsp").forward(request, response);
         }
     }
 
@@ -52,6 +52,6 @@ public class SupplierServlet extends HttpServlet {
             SupplierDAO.updateSupplier(supplier);
         }
 
-        response.sendRedirect("SupplierServlet");
+        response.sendRedirect(request.getContextPath() + "/SupplierServlet");
     }
 }
