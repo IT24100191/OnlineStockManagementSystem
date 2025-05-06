@@ -4,11 +4,34 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c1645d58-9d85-49e9-98c7-a7164beb38d0" name="Changes" comment="" />
+    <list default="true" id="c1645d58-9d85-49e9-98c7-a7164beb38d0" name="Changes" comment="supplier">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/InventoryManagementSystem.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/SupplierServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/SupplierServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/supplier-form.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/supplier-form.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/supplier-list.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/supplier-list.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/WEB-INF/web.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/controller/SupplierServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controller/SupplierServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/index.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/supplier-form.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/supplier-list.jsp" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GithubDefaultAccount">
+    <option name="defaultAccountId" value="42310737-7c79-4c3d-90ef-f526a3963a42" />
   </component>
   <component name="LogFilters">
     <option name="FILTER_ERRORS" value="false" />
@@ -28,41 +51,126 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "Smart Tomcat.Tomcat: InventoryManagementSystem (2).executor": "Debug",
     "Smart Tomcat.Tomcat: InventoryManagementSystem.executor": "Debug",
+    "Tomcat Server.Tomcat .executor": "Debug",
+    "git-widget-placeholder": "master",
+    "ignore.virus.scanning.warn.message": "true",
+    "junie.onboarding.icon.badge.shown": "true",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "/Users/vividstudios/Downloads/InventoryManagementSystem",
+    "last_opened_file_path": "C:/Users/FixHello123/Downloads/InventoryManagementSystem copy/InventoryManagementSystem copy",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Modules",
+    "project.structure.last.edited": "SDKs",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "com.poratu.idea.plugins.tomcat.setting.TomcatServersConfigurable",
+    "settings.editor.selected.configurable": "org.jetbrains.plugins.github.ui.GithubSettingsConfigurable",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Smart Tomcat.Tomcat: InventoryManagementSystem">
+    <configuration name="Tomcat " type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat " ALTERNATIVE_JRE_ENABLED="true" ALTERNATIVE_JRE_PATH="$APPLICATION_HOME_DIR$/jbr" nameIsGenerated="true">
+      <option name="UPDATING_POLICY" value="restart-server" />
+      <deployment />
+      <server-settings>
+        <option name="BASE_DIRECTORY_NAME" value="a0f45d8b-18b1-43da-bc7f-6acef3bfb16e" />
+      </server-settings>
+      <predefined_log_file enabled="true" id="Tomcat" />
+      <predefined_log_file enabled="true" id="Tomcat Catalina" />
+      <predefined_log_file id="Tomcat Manager" />
+      <predefined_log_file id="Tomcat Host Manager" />
+      <predefined_log_file id="Tomcat Localhost Access" />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="51104" />
+      </RunnerSettings>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Debug">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Profile">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Run">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Tomcat: InventoryManagementSystem" type="com.poratu.idea.plugins.tomcat">
       <predefined_log_file enabled="true" id="Tomcat Localhost Log" />
       <predefined_log_file enabled="true" id="Tomcat Access Log" />
       <predefined_log_file id="Tomcat Catalina Log" />
       <predefined_log_file id="Tomcat Manager Log" />
       <predefined_log_file id="Tomcat Host Manager Log" />
-      <option name="catalinaBase" value="" />
+      <option name="catalinaBase" value="C:\Program Files\Apache Software Foundation\Tomcat 9.0" />
       <option name="contextPath" value="/InventoryManagementSystem" />
       <option name="docBase" value="$PROJECT_DIR$/src/main/webapp" />
       <option name="envOptions">
         <map />
       </option>
       <option name="extraClassPath" value="" />
+      <option name="port" value="8081" />
       <option name="tomcatInfo">
         <TomcatInfo>
-          <option name="name" value="Apache Tomcat/9.0.104 (2)" />
-          <option name="path" value="$PROJECT_DIR$/../apache-tomcat-9.0.104" />
-          <option name="version" value="9.0.104.0" />
+          <option name="name" value="Apache Tomcat/9.0.102" />
+          <option name="path" value="$PROJECT_DIR$/../../../../../Program Files/Apache Software Foundation/Tomcat 9.0" />
+          <option name="version" value="9.0.102.0" />
         </TomcatInfo>
       </option>
       <option name="vmOptions" value="" />
@@ -71,12 +179,16 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <list>
+      <item itemvalue="Smart Tomcat.Tomcat: InventoryManagementSystem" />
+      <item itemvalue="Tomcat Server.Tomcat " />
+    </list>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-jdk-9823dce3aa75-a94e463ab2e7-intellij.indexing.shared.core-IU-243.26053.27" />
-        <option value="bundled-js-predefined-d6986cc7102b-1632447f56bf-JavaScript-IU-243.26053.27" />
+        <option value="bundled-jdk-9823dce3aa75-fbdcb00ec9e3-intellij.indexing.shared.core-IU-251.23774.435" />
+        <option value="bundled-js-predefined-d6986cc7102b-f27c65a3e318-JavaScript-IU-251.23774.435" />
       </set>
     </attachedChunks>
   </component>
@@ -92,11 +204,46 @@
       <workItem from="1745725381709" duration="2055000" />
       <workItem from="1745856376670" duration="667000" />
       <workItem from="1746079271777" duration="5386000" />
-      <workItem from="1746095973754" duration="391000" />
+      <workItem from="1746095973754" duration="3309000" />
+      <workItem from="1746099311817" duration="10000" />
+      <workItem from="1746099343200" duration="10000" />
+      <workItem from="1746099375045" duration="155000" />
+      <workItem from="1746100148113" duration="1401000" />
+      <workItem from="1746102955444" duration="9306000" />
     </task>
+    <task id="LOCAL-00001" summary="supplier">
+      <option name="closed" value="true" />
+      <created>1746097590962</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1746097590962</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="CUSTOM_BOOLEAN_PROPERTIES">
+                <map>
+                  <entry key="Show.Git.Branches" value="false" />
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="supplier" />
+    <option name="LAST_COMMIT_MESSAGE" value="supplier" />
   </component>
 </project>

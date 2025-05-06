@@ -12,57 +12,76 @@
     <title><%= supplier.getId() == 0 ? "Add New" : "Edit" %> Supplier</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
-            margin: 20px;
-            background-color: #f5f5f5;
+            font-family: 'Segoe UI', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #dbe4ea 0%, #52ab98 100%);
+            min-height: 100vh;
         }
         .container {
             max-width: 600px;
-            margin: 0 auto;
-            background-color: white;
-            padding: 20px;
-            border-radius: 5px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            margin: 40px auto;
+            background: #fff;
+            padding: 30px 24px 24px 24px;
+            border-radius: 18px;
+            box-shadow: 0 8px 32px rgba(43,103,119,0.10);
         }
         h1 {
-            color: #333;
+            color: #2b6777;
             text-align: center;
+            margin-bottom: 24px;
         }
         .form-group {
-            margin-bottom: 15px;
+            margin-bottom: 18px;
         }
         label {
             display: block;
-            margin-bottom: 5px;
-            color: #555;
+            margin-bottom: 6px;
+            color: #2b6777;
+            font-weight: 600;
         }
         input[type="text"],
         input[type="email"] {
             width: 100%;
-            padding: 8px;
-            border: 1px solid #ddd;
-            border-radius: 4px;
+            padding: 10px;
+            border: 1px solid #dbe4ea;
+            border-radius: 6px;
             box-sizing: border-box;
+            background: #f2f2f2;
+            color: #2b6777;
+            font-size: 1rem;
         }
         .button-group {
-            margin-top: 20px;
+            margin-top: 24px;
             text-align: center;
         }
         .button {
-            padding: 10px 20px;
+            padding: 10px 28px;
             border: none;
-            border-radius: 4px;
+            border-radius: 8px;
             cursor: pointer;
             font-size: 16px;
-            margin: 0 5px;
+            margin: 0 8px;
+            font-weight: 600;
+            transition: background 0.2s, color 0.2s, transform 0.2s;
         }
         .save-button {
-            background-color: #4CAF50;
-            color: white;
+            background: linear-gradient(90deg, #2b6777 60%, #52ab98 100%);
+            color: #fff;
+        }
+        .save-button:hover {
+            background: linear-gradient(90deg, #52ab98 60%, #2b6777 100%);
+            color: #2b6777;
+            transform: translateY(-2px) scale(1.04);
         }
         .cancel-button {
-            background-color: #f44336;
-            color: white;
+            background: #dbe4ea;
+            color: #2b6777;
+        }
+        .cancel-button:hover {
+            background: #52ab98;
+            color: #fff;
+            transform: translateY(-2px) scale(1.04);
         }
     </style>
 </head>
