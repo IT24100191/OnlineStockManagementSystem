@@ -44,4 +44,14 @@ public class SupplierDAO {
     public static void deleteSupplier(int id) {
         suppliers.removeIf(supplier -> supplier.getId() == id);
     }
+
+    public static List<Supplier> getSuppliersByName(String name) {
+        List<Supplier> result = new ArrayList<>();
+        for (Supplier supplier : suppliers) {
+            if (supplier.getName().toLowerCase().contains(name.toLowerCase())) {
+                result.add(supplier);
+            }
+        }
+        return result;
+    }
 }

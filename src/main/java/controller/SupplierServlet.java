@@ -32,8 +32,15 @@ public class SupplierServlet extends HttpServlet {
                 response.sendRedirect(request.getContextPath() + "/SupplierServlet");
                 break;
             default:
-                List<Supplier> suppliers = SupplierDAO.getAllSuppliers();
+                String search = request.getParameter("search");
+                List<Supplier> suppliers;
+                if (search != null && !search.trim().isEmpty()) {
+                    suppliers = SupplierDAO.getSuppliersByName(search.trim());
+                } else {
+                    suppliers = SupplierDAO.getAllSuppliers();
+                }
                 request.setAttribute("supplierList", suppliers);
+                request.setAttribute("search", search != null ? search : "");
                 request.getRequestDispatcher("/supplier-list.jsp").forward(request, response);
         }
     }

@@ -4,13 +4,29 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c1645d58-9d85-49e9-98c7-a7164beb38d0" name="Changes" comment="supplier management system" />
+    <list default="true" id="c1645d58-9d85-49e9-98c7-a7164beb38d0" name="Changes" comment="supplier management system">
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/SupplierServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/SupplierServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dao/SupplierDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/SupplierDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/supplier-list.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/supplier-list.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/controller/SupplierServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controller/SupplierServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/dao/SupplierDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/dao/SupplierDAO.class" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GithubDefaultAccount">
@@ -22,6 +38,9 @@
     <option name="FILTER_INFO" value="true" />
     <option name="FILTER_DEBUG" value="true" />
     <option name="CUSTOM_FILTER" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 8
@@ -39,7 +58,7 @@
     "Smart Tomcat.Tomcat: InventoryManagementSystem (2).executor": "Debug",
     "Smart Tomcat.Tomcat: InventoryManagementSystem.executor": "Debug",
     "Tomcat Server.Tomcat .executor": "Debug",
-    "git-widget-placeholder": "master",
+    "git-widget-placeholder": "SupplierManagement",
     "ignore.virus.scanning.warn.message": "true",
     "junie.onboarding.icon.badge.shown": "true",
     "kotlin-language-version-configured": "true",
@@ -57,6 +76,11 @@
   }
 }]]></component>
   <component name="RunManager" selected="Smart Tomcat.Tomcat: InventoryManagementSystem">
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <module name="OnlineStockManagementSystem" />
+      <option name="filePath" />
+      <method v="2" />
+    </configuration>
     <configuration name="Tomcat " type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat " ALTERNATIVE_JRE_ENABLED="true" ALTERNATIVE_JRE_PATH="$APPLICATION_HOME_DIR$/jbr" nameIsGenerated="true">
       <option name="UPDATING_POLICY" value="restart-server" />
       <deployment />
@@ -157,7 +181,7 @@
         </TomcatInfo>
       </option>
       <option name="vmOptions" value="" />
-      <module name="InventoryManagementSystem" />
+      <module name="OnlineStockManagementSystem" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -192,7 +216,7 @@
       <workItem from="1746099343200" duration="10000" />
       <workItem from="1746099375045" duration="155000" />
       <workItem from="1746100148113" duration="1401000" />
-      <workItem from="1746102955444" duration="11223000" />
+      <workItem from="1746102955444" duration="15008000" />
     </task>
     <task id="LOCAL-00001" summary="supplier">
       <option name="closed" value="true" />
@@ -218,7 +242,15 @@
       <option name="project" value="LOCAL" />
       <updated>1746511325477</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="supplier management system">
+      <option name="closed" value="true" />
+      <created>1746511878689</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1746511878689</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
