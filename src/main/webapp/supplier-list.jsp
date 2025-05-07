@@ -86,7 +86,13 @@
 <body>
     <div class="container">
         <h1>Supplier List</h1>
-        <a href="SupplierServlet?action=new" class="add-button">Add New Supplier</a>
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px; flex-wrap: wrap; gap: 12px;">
+            <a href="SupplierServlet?action=new" class="add-button">Add New Supplier</a>
+            <form method="get" action="SupplierServlet" style="display: flex; align-items: center; gap: 8px; margin: 0;">
+                <input type="text" name="search" placeholder="Search by supplier name..." value="<%= request.getAttribute("search") != null ? request.getAttribute("search") : "" %>" style="padding: 10px; width: 260px; border-radius: 6px; border: 1px solid #dbe4ea; font-size: 1rem; color: #2b6777; background: #f2f2f2;">
+                <button type="submit" style="padding: 10px 18px; border-radius: 6px; border: none; background: linear-gradient(90deg, #2b6777 60%, #52ab98 100%); color: #fff; font-weight: 600; font-size: 1rem; cursor: pointer; transition: background 0.2s;">Search</button>
+            </form>
+        </div>
         <table>
             <tr>
                 <th>ID</th>

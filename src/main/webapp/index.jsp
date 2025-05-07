@@ -3,7 +3,7 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Inventory Management System</title>
+    <title>Online Stock Management System</title>
     <style>
         body {
             font-family: 'Segoe UI', Arial, sans-serif;
@@ -83,7 +83,7 @@
     <div class="container">
         <div class="hero">
             <img src="https://images.unsplash.com/photo-1521737852567-6949f3f9f2b5?auto=format&fit=facearea&w=256&q=80" alt="Inventory Hero" />
-            <h1>Welcome to Inventory Management System</h1>
+            <h1>Welcome to Online Stock Management System</h1>
             <p>Efficiently manage your suppliers, products, and stock with a modern, easy-to-use interface.</p>
         </div>
         <div class="menu">
