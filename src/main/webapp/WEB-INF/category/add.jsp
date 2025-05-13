@@ -106,7 +106,7 @@
       color: #495057;
     }
 
-    .form-control {
+    .form-control{
       width: 100%;
       padding: 0.8rem 1rem;
       border: 1px solid #e0e0e0;
@@ -116,7 +116,7 @@
       transition: var(--transition);
     }
 
-    .form-control:focus {
+    .form-control:focus{
       outline: none;
       border-color: var(--primary-color);
       box-shadow: 0 0 0 3px rgba(67, 97, 238, 0.15);

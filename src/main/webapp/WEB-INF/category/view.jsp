@@ -137,12 +137,12 @@
       box-shadow: 0 4px 12px rgba(67, 97, 238, 0.2);
     }
 
-    .btn-delete {
+    .btn-delete{
       background-color: var(--danger-color);
       color: white;
     }
 
-    .btn-delete:hover {
+    .btn-delete:hover{
       background-color: #db2777;
     }
 

@@ -236,19 +236,19 @@
       background-color: #db2777;
     }
 
-    .empty-state {
+    .empty-state{
       text-align: center;
       padding: 2rem;
       color: var(--secondary-color);
     }
 
-    .empty-state i {
+    .empty-state i{
       font-size: 3rem;
       margin-bottom: 1rem;
       color: #e0e0e0;
     }
 
-    .empty-state p {
+    .empty-state p{
       font-size: 1.1rem;
     }
   </style>

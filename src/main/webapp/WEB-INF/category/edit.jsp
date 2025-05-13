@@ -123,12 +123,12 @@
       gap: 0.5rem;
     }
 
-    .btn-primary {
+    .btn-primary{
       background-color: var(--primary-color);
       color: white;
     }
 
-    .btn-primary:hover {
+    .btn-primary:hover{
       background-color: var(--primary-hover);
       transform: translateY(-2px);
       box-shadow: 0 4px 12px rgba(67, 97, 238, 0.2);
