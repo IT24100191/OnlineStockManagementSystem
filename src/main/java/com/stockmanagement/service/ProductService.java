@@ -20,25 +20,18 @@ public class ProductService implements IProductService {
     }
 
     private Comparator<Product> getComparator(String sortBy) {
-        Comparator<Product> comparator = null;
+        Comparator<Product> comparator;
         switch (sortBy) {
-            case "name":
-                comparator = Comparator.comparing(Product::getName, String.CASE_INSENSITIVE_ORDER);
+            case "asc":
+                comparator = Comparator.comparing(Product::getExpiryDate);
                 break;
-            case "price":
-                comparator = Comparator.comparing(Product::getPrice);
-                break;
-            case "category":
-                comparator = Comparator.comparing(Product::getCategory, String.CASE_INSENSITIVE_ORDER);
-                break;
-            case "quantity":
-                comparator = Comparator.comparing(Product::getQuantity);
+            case "desc":
+                comparator = Comparator.comparing(Product::getExpiryDate).reversed();
                 break;
             default:
-                comparator = Comparator.comparing(Product::getId, String.CASE_INSENSITIVE_ORDER);
+                comparator = Comparator.comparing(Product::getId);
                 break;
         }
-
         return comparator;
     }
 

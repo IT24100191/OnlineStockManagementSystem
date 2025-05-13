@@ -199,6 +199,29 @@ td a:hover {
     text-decoration: underline;
 }
 
+th a {
+    color: #333;
+    text-decoration: none;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    transition: color 0.2s ease;
+}
+
+th a:hover {
+    color: #007bff;
+}
+
+th i {
+    font-size: 0.85em;
+    transition: transform 0.2s ease;
+}
+
+th a:hover i {
+    transform: scale(1.1);
+}
+
 /* Delete Button */
 button[type="submit"] {
     background-color: #ef4444;
@@ -259,5 +282,15 @@ button[type="submit"]:hover {
     gap: 15px;
     margin-top: 10px;
     flex-wrap: wrap;
+}
+
+.no-results-message {
+    text-align: center;
+    color: #e74c3c;
+    font-weight: bold;
+    font-size: 1.1rem;
+    padding: 15px;
+    background-color: #fdf2f2;
+    border-radius: 6px;
 }
 

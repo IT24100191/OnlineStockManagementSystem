@@ -42,6 +42,11 @@
       </div>
 
       <div class="form-group">
+        <label>Expiry Date</label>
+        <input type="date" name="exp-date" required/>
+      </div>
+
+      <div class="form-group">
         <label><i class="fas fa-dollar-sign"></i> Price</label>
         <input type="number" name="price" step="0.01" required />
       </div>

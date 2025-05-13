@@ -9,6 +9,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.Arrays;
 import java.util.List;
 
@@ -21,7 +23,7 @@ public class ProductController extends HttpServlet {
         if (action == null) action = "list";
 
         String sortBy = request.getParameter("sortBy");
-        if (sortBy == null || sortBy.isEmpty()) sortBy = "id";
+        if (sortBy == null || sortBy.isEmpty()) sortBy = "desc";
 
         String id;
 
@@ -51,33 +53,40 @@ public class ProductController extends HttpServlet {
 
         switch (action) {
             case "add-product":
+                DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+                LocalDate expDate = LocalDate.parse(request.getParameter("exp-date"), formatter);
+
                 product = new Product(
                         request.getParameter("product-id"),
                         request.getParameter("name"),
                         request.getParameter("category"),
                         Double.parseDouble(request.getParameter("price")),
                         Integer.parseInt(request.getParameter("quantity")),
-                        Integer.parseInt(request.getParameter("stock-alert-limit"))
+                        Integer.parseInt(request.getParameter("stock-alert-limit")),
+                        expDate
                 );
                 service.addProduct(product);
                 response.sendRedirect("products");
                 return;
             case "delete-product":
                 String[] selectedIds = request.getParameterValues("product-ids");
-                System.out.println(Arrays.toString(selectedIds));
                 if (selectedIds != null && selectedIds.length > 0) {
                     service.deleteProductsById(Arrays.asList(selectedIds));
                 }
                 response.sendRedirect("products");
                 return;
             case "update-product":
+                DateTimeFormatter formatter2 = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+                LocalDate expDateUpdate = LocalDate.parse(request.getParameter("exp-date"), formatter2);
+
                 product = new Product(
                         request.getParameter("product-id"),
                         request.getParameter("name"),
                         request.getParameter("category"),
                         Double.parseDouble(request.getParameter("price")),
                         Integer.parseInt(request.getParameter("quantity")),
-                        Integer.parseInt(request.getParameter("stock-alert-limit"))
+                        Integer.parseInt(request.getParameter("stock-alert-limit")),
+                        expDateUpdate
                 );
                 service.updateProduct(product);
                 response.sendRedirect("products");

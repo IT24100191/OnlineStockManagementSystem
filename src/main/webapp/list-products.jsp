@@ -55,10 +55,9 @@
       </div>
 
       <!-- Search Form -->
-      <form method="get" action="products" class="search-form">
-        <input type="text" name="search" placeholder="Search by product name..." />
-        <button type="submit"><i class="fas fa-search"></i> Search</button>
-      </form>
+      <div class="search-form">
+        <input type="text" name="search" id="productSearch" placeholder="Search by product name..." />
+      </div>
 
       <!-- Product Table -->
       <form method="post" action="products?action=delete-product">
@@ -66,7 +65,18 @@
         <table>
           <thead>
           <tr>
-            <th>Select</th><th>ID</th><th>Name</th><th>Price</th><th>Type</th><th>Actions</th>
+            <th>Select</th>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Type</th>
+            <th><a href="products?sortBy=${sortBy eq 'asc' ? 'desc' : 'asc'}">
+              Expiry Date
+              <i class="fas ${sortBy eq 'asc' ? 'fa-sort-up' : 'fa-sort-down'}"></i>
+            </a>
+
+            </th>
+            <th>Actions</th>
           </tr>
           </thead>
           <tbody>
@@ -77,9 +87,13 @@
               <td>${temp.getName()}</td>
               <td>Rs. ${temp.getPrice()}</td>
               <td>${temp.getCategory()}</td>
+              <td>${temp.getExpiryDate()}</td>
               <td><a href="products?action=update-product&id=${temp.getId()}"><i class="fas fa-pen"></i> Edit</a></td>
             </tr>
           </c:forEach>
+          <tr id="noResultsMessageRow" style="display: none;">
+            <td colspan="7" class="no-results-message">No search results found.</td>
+          </tr>
           </tbody>
         </table>
         <button type="submit"><i class="fas fa-trash"></i> Delete Selected</button>
@@ -87,5 +101,6 @@
     </div>
   </div>
   <script src="./js/main.js"></script>
+  <script src="./js/products.js"></script>
   </body>
 </html>

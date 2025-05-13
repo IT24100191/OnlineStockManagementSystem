@@ -13,8 +13,8 @@ public class ProductSorter {
         }
 
         int mid = products.size() / 2;
-        List<Product> left = products.subList(0, mid);
-        List<Product> right = products.subList(mid, products.size());
+        List<Product> left = new ArrayList<>(products.subList(0, mid));
+        List<Product> right = new ArrayList<>(products.subList(mid, products.size()));
 
         mergeSort(left, comparator);
         mergeSort(right, comparator);
