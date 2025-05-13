@@ -1,5 +1,7 @@
 package com.stockmanagement.controller;
 
+import com.stockmanagement.service.ProductService;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -9,18 +11,22 @@ import java.io.IOException;
 
 @WebServlet("/products")
 public class ProductController extends HttpServlet {
+    private final ProductService service = new ProductService();
+
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String action = request.getParameter("action");
-        if (action == null) {
-            action = "list";
-        }
+        if (action == null) action = "list";
+
+
+
         switch (action) {
-            case "new":
+            case "list":
+
                 break;
-            default:
-                response.sendRedirect("list.jsp");
         }
     }
 
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
+    }
 }

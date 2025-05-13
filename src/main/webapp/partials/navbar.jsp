@@ -7,12 +7,6 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
-<div class="nav-bar">
-    <div class="user-profile">
-        <div class="user-dropdown" id="user-dropdown">
-            <a href="#">Profile</a>
-            <a href="#" class="logout">Logout</a>
-        </div>
-    </div>
-
+<div class="navbar">
+    Welcome, admin | 8:52 pm
 </div>

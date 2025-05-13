@@ -1,0 +1,139 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    display: flex;
+    background-color: #f9fafb;
+    color: #1f2937;
+}
+
+/* Sidebar */
+.side-bar {
+    width: 250px;
+    background-color: #1f2937;
+    min-height: 100vh;
+    padding: 20px;
+    color: #fff;
+    position: fixed;
+}
+
+.menu-heading {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 30px;
+    color: #3b82f6;
+}
+
+.item .sub-btn {
+    display: block;
+    font-size: 1.1rem;
+    padding: 12px 15px;
+    background: #374151;
+    color: #fff;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.item .sub-btn:hover {
+    background: #4b5563;
+}
+
+.sub-menu a {
+    display: block;
+    padding: 10px 20px;
+    color: #d1d5db;
+    text-decoration: none;
+    border-left: 4px solid transparent;
+    transition: all 0.3s;
+}
+
+.sub-menu a:hover {
+    color: #fff;
+    background-color: #6b7280;
+    border-left: 4px solid #3b82f6;
+}
+
+/* Container */
+.container {
+    margin-left: 250px;
+    padding: 20px;
+    width: 100%;
+}
+
+/* Navbar */
+.navbar {
+    background-color: #ffffff;
+    padding: 15px 25px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    margin-bottom: 30px;
+    font-size: 0.95rem;
+    color: #6b7280;
+}
+
+/* Content */
+.content-container {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 12px;
+    max-width: 600px;
+    margin: auto;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+/* Form */
+.add-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: #374151;
+}
+
+.form-group i {
+    margin-right: 8px;
+    color: #3b82f6;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 10px 15px;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.form-group input:focus {
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.3);
+    outline: none;
+}
+
+/* Button */
+button[type="submit"] {
+    background-color: #3b82f6;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button[type="submit"]:hover {
+    background-color: #2563eb;
+}
