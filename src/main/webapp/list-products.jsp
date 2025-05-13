@@ -70,15 +70,16 @@
           </tr>
           </thead>
           <tbody>
-          <tr>
-            <td><input type="checkbox" name="selected"/></td>
-            <td>P1001</td>
-            <td>Phone</td>
-            <td>Rs. 15000</td>
-            <td>Electronics</td>
-            <td><a href="update-product.html"><i class="fas fa-pen"></i> Edit</a></td>
-          </tr>
-
+          <c:forEach var="temp" items="${products}">
+            <tr>
+              <td><input type="checkbox" name="selected"/></td>
+              <td>${temp.getId()}</td>
+              <td>${temp.getName()}</td>
+              <td>Rs. ${temp.getPrice()}</td>
+              <td>${temp.getCategory()}</td>
+              <td><a href="update-product.jsp"><i class="fas fa-pen"></i> Edit</a></td>
+            </tr>
+          </c:forEach>
           </tbody>
         </table>
         <button type="submit"><i class="fas fa-trash"></i> Delete Selected</button>

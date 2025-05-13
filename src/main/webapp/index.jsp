@@ -8,6 +8,6 @@
 <h1><%= "Hello World!" %>
 </h1>
 <br/>
-<a href="${pageContext.request.getContext}/products">products</a>
+<a href="products">products</a>
 </body>
 </html>
