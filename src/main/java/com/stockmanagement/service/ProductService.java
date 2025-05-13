@@ -53,4 +53,26 @@ public class ProductService implements IProductService {
         products.removeIf(product -> ids.contains(product.getId()));
         dao.saveAllProducts(products);
     }
+
+    @Override
+    public Product getProductById(String id) {
+        for (Product product : dao.getAllProducts()) {
+            if (product.getId().equals(id)) {
+                return product;
+            }
+        }
+        return null;
+    }
+
+    @Override
+    public void updateProduct(Product product) {
+        List<Product> products = dao.getAllProducts();
+        for (Product product1 : products) {
+            if (product1.getId().equals(product.getId())) {
+                products.set(products.indexOf(product1), product);
+                dao.saveAllProducts(products);
+                break;
+            }
+        }
+    }
 }

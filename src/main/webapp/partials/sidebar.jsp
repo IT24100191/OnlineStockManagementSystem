@@ -12,7 +12,7 @@
     <div class="item">
       <a class="sub-btn">Product Management</a>
       <div class="sub-menu">
-        <a href="list-products.jsp">Products</a>
+        <a href="products">Products</a>
       </div>
     </div>
   </div>

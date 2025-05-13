@@ -21,57 +21,45 @@
   <%@include file="partials/navbar.jsp"%>
 
   <div class="content-container">
-    <form method="post" action="../ProductServlet" class="add-form">
-      <input type="hidden" name="action" value="update" />
-      <input type="hidden" name="id" value="P1001" />
+    <form method="post" action="products?action=update-product" class="add-form">
+
+      <div class="form-group">
+        <label><i class="fas fa-box"></i> Product Id</label>
+        <input type="text" name="product-id" value="${product.getId()}" required />
+      </div>
 
       <div class="form-group">
         <label><i class="fas fa-box"></i> Product Name</label>
-        <input type="text" name="name" value="Phone" required />
+        <input type="text" name="name" value="${product.getName()}" required />
+      </div>
+
+      <div class="form-group">
+        <label>Category</label>
+        <select name="category">
+          <option value="Electronics">Electronics</option>
+          <option value="Clothing">Clothing</option>
+        </select>
       </div>
 
       <div class="form-group">
         <label><i class="fas fa-dollar-sign"></i> Price</label>
-        <input type="number" name="price" step="0.01" value="15000" required />
+        <input type="number" name="price" step="0.01" value="${product.getPrice()}" required />
       </div>
 
       <div class="form-group">
         <label><i class="fas fa-layer-group"></i> Stock</label>
-        <input type="number" name="stock" min="1" value="20" required />
+        <input type="number" name="quantity" min="1" value="${product.getQuantity()}" required />
       </div>
 
       <div class="form-group">
         <label><i class="fas fa-bell"></i> Stock Alert Limit</label>
-        <input type="number" name="stock_low_limit" min="0" value="5" required />
-      </div>
-
-      <div class="form-group" id="electronicFields">
-        <label><i class="fas fa-shield-alt"></i> Warranty (months)</label>
-        <input type="number" name="warranty" value="12" />
-      </div>
-
-      <div class="form-group" id="foodFields" style="display:none;">
-        <label><i class="fas fa-calendar-alt"></i> Expiry Date</label>
-        <input type="text" name="expiry" placeholder="YYYY-MM-DD" value="${product.expiry}" />
+        <input type="number" name="stock-alert-limit" min="0" value="${product.getStockAlertLimit()}" required />
       </div>
 
       <button type="submit"><i class="fas fa-save"></i> Update Product</button>
     </form>
   </div>
 </div>
-
-<script>
-  function toggleFields(type) {
-    document.getElementById("electronicFields").style.display = type === "Electronic" ? "block" : "none";
-    document.getElementById("foodFields").style.display = type === "Food" ? "block" : "none";
-  }
-  
-  // document.querySelector("select[name='type']").addEventListener("change", function() {
-  //   toggleFields(this.value);
-  // });
-  
-  // toggleFields("${product.type}");
-</script>
 <script src="./js/main.js"></script>
 </body>
 </html>

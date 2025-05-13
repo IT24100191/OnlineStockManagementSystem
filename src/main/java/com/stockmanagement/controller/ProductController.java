@@ -23,7 +23,19 @@ public class ProductController extends HttpServlet {
         String sortBy = request.getParameter("sortBy");
         if (sortBy == null || sortBy.isEmpty()) sortBy = "id";
 
+        String id;
+
         switch (action) {
+            case "update-product":
+                id = request.getParameter("id");
+                Product product = service.getProductById(id);
+                if (product == null) {
+                    response.sendRedirect("products");
+                    return;
+                }
+                request.setAttribute("product", product);
+                request.getRequestDispatcher("update-product.jsp").forward(request, response);
+                break;
             case "list":
                 List<Product> products = service.getSortedProducts(sortBy);
                 request.setAttribute("products", products);
@@ -35,10 +47,11 @@ public class ProductController extends HttpServlet {
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String action = request.getParameter("action");
+        Product product = null;
 
         switch (action) {
             case "add-product":
-                Product product = new Product(
+                product = new Product(
                         request.getParameter("product-id"),
                         request.getParameter("name"),
                         request.getParameter("category"),
@@ -47,18 +60,32 @@ public class ProductController extends HttpServlet {
                         Integer.parseInt(request.getParameter("stock-alert-limit"))
                 );
                 service.addProduct(product);
-                break;
+                response.sendRedirect("products");
+                return;
             case "delete-product":
                 String[] selectedIds = request.getParameterValues("product-ids");
                 System.out.println(Arrays.toString(selectedIds));
                 if (selectedIds != null && selectedIds.length > 0) {
                     service.deleteProductsById(Arrays.asList(selectedIds));
                 }
-                break;
+                response.sendRedirect("products");
+                return;
+            case "update-product":
+                product = new Product(
+                        request.getParameter("product-id"),
+                        request.getParameter("name"),
+                        request.getParameter("category"),
+                        Double.parseDouble(request.getParameter("price")),
+                        Integer.parseInt(request.getParameter("quantity")),
+                        Integer.parseInt(request.getParameter("stock-alert-limit"))
+                );
+                service.updateProduct(product);
+                response.sendRedirect("products");
+                return;
             default:
                 response.sendRedirect("products");
-                break;
+                return;
+
         }
-        response.sendRedirect("products");
     }
 }
