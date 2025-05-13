@@ -5,7 +5,7 @@ import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class CategoryService {
+public class CategoryService{
     private static final String DB_FILE = " categories_db.txt";
     private static final String SEPARATOR = "|||";
 
@@ -13,7 +13,7 @@ public class CategoryService {
         List<Category> categories = new ArrayList<>();
         File dbFile = new File(DB_FILE);
 
-        if (!dbFile.exists()) {
+        if (!dbFile.exists()){
             System.out.println("DEBUG: File not found: " + DB_FILE);
             return categories;
         }
@@ -39,7 +39,7 @@ public class CategoryService {
                     System.err.println("DEBUG: Invalid line format: " + line);
                 }
             }
-        } catch (IOException e) {
+        } catch (IOException e){
             System.err.println("DEBUG: Error reading file: " + e.getMessage());
         }
 
