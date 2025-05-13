@@ -1,11 +1,11 @@
 package com.stockmanagement.model;
 
-public class Category{
+public class Category {
     private int id;
     private String name;
     private String description;
 
-    public Category(){
+    public Category() {
     }
 
     public Category(int id, String name, String description) {
@@ -40,7 +40,7 @@ public class Category{
     }
 
     @Override
-    public String toString() {
+    public String toString(){
         return "Category{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
