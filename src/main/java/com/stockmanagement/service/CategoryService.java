@@ -15,17 +15,17 @@ public class CategoryService {
 
         if (!dbFile.exists()) {
             System.out.println("DEBUG: File not found: " + DB_FILE);
-            return categories; // Return empty list if file doesn't exist
+            return categories;
         }
 
         try (BufferedReader reader = new BufferedReader(new FileReader(dbFile))) {
             String line;
             while ((line = reader.readLine()) != null) {
-                line = line.trim(); // Trim whitespace
-                if (line.isEmpty()) continue; // Skip empty lines
+                line = line.trim();
+                if (line.isEmpty()) continue;
 
-                String[] parts = line.split("\\|\\|\\|", 3); // Split into 3 parts max
-                if (parts.length >= 2) { // At least ID and Name are required
+                String[] parts = line.split("\\|\\|\\|", 3);
+                if (parts.length >= 2) {
                     Category category = new Category();
                     try {
                         category.setId(Integer.parseInt(parts[0]));
@@ -43,7 +43,7 @@ public class CategoryService {
             System.err.println("DEBUG: Error reading file: " + e.getMessage());
         }
 
-        System.out.println("DEBUG: Loaded categories: " + categories); // Log loaded data
+        System.out.println("DEBUG: Loaded categories: " + categories);
         return categories;
     }
 
@@ -55,7 +55,6 @@ public class CategoryService {
     }
 
     public List<Category> searchCategories(String searchQuery) {
-        // Add logic to filter categories based on the searchQuery (e.g., by name or description)
         List<Category> filteredCategories = new ArrayList<>();
         for (Category category : getAllCategories()) {
             if (category.getName().toLowerCase().contains(searchQuery.toLowerCase()) ||
