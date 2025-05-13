@@ -10,7 +10,7 @@ import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 @WebServlet(name = "CategoryEditServlet", value = "/categories/edit")
-public class CategoryEditServlet extends HttpServlet {
+public class CategoryEditServlet extends HttpServlet{
     private final CategoryService categoryService = new CategoryService();
 
     @Override
@@ -20,7 +20,7 @@ public class CategoryEditServlet extends HttpServlet {
             int id = Integer.parseInt(request.getParameter("id"));
             Category category = categoryService.getCategoryById(id);
 
-            if (category != null){
+            if (category != null) {
                 request.setAttribute("category", category);
                 request.getRequestDispatcher("/WEB-INF/category/edit.jsp").forward(request, response);
             } else {

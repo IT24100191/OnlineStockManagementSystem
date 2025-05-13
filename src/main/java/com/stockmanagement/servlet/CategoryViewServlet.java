@@ -10,7 +10,7 @@ import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 @WebServlet(name = "CategoryViewServlet", value = "/categories/view")
-public class CategoryViewServlet extends HttpServlet {
+public class CategoryViewServlet extends HttpServlet{
     private final CategoryService categoryService = new CategoryService();
 
     @Override
@@ -20,7 +20,7 @@ public class CategoryViewServlet extends HttpServlet {
             int id = Integer.parseInt(request.getParameter("id"));
             Category category = categoryService.getCategoryById(id);
 
-            if (category == null) {
+            if (category == null){
                 response.sendRedirect(request.getContextPath() + "/categories");
                 return;
             }

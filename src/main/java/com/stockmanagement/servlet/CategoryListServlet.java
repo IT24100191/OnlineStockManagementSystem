@@ -17,12 +17,12 @@ public class CategoryListServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        if (request.getSession().getAttribute("message") != null) {
+        if (request.getSession().getAttribute("message") != null){
             request.setAttribute("message", request.getSession().getAttribute("message"));
             request.getSession().removeAttribute("message");
         }
 
-        if (request.getSession().getAttribute("error") != null){
+        if (request.getSession().getAttribute("error") != null) {
             request.setAttribute("error", request.getSession().getAttribute("error"));
             request.getSession().removeAttribute("error");
         }

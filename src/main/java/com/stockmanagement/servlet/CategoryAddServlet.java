@@ -25,7 +25,7 @@ public class CategoryAddServlet extends HttpServlet {
         String name = request.getParameter("name");
         String description = request.getParameter("description");
 
-        if (name == null || name.trim().isEmpty()){
+        if (name == null || name.trim().isEmpty()) {
             request.setAttribute("error", "Category name is required");
             request.getRequestDispatcher("/WEB-INF/category/add.jsp").forward(request, response);
             return;
@@ -39,7 +39,7 @@ public class CategoryAddServlet extends HttpServlet {
 
             request.getSession().setAttribute("message", "Category added successfully!");
             response.sendRedirect(request.getContextPath() + "/categories");
-        } catch (IOException e) {
+        } catch (IOException e){
             request.setAttribute("error", "Error saving category: " + e.getMessage());
             request.getRequestDispatcher("/WEB-INF/category/add.jsp").forward(request, response);
         }

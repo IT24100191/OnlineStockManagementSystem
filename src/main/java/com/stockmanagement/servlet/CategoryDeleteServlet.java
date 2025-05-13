@@ -14,12 +14,12 @@ public class CategoryDeleteServlet extends HttpServlet{
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
+            throws ServletException, IOException{
         try {
             int id = Integer.parseInt(request.getParameter("id"));
             categoryService.deleteCategory(id);
             request.getSession().setAttribute("message", "Category deleted successfully");
-        } catch (NumberFormatException e) {
+        } catch (NumberFormatException e){
             request.getSession().setAttribute("error", "Invalid category ID");
         } catch (IOException e) {
             request.getSession().setAttribute("error", "Error deleting category: " + e.getMessage());
