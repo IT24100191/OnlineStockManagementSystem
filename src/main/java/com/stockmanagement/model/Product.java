@@ -1,6 +1,10 @@
 package com.stockmanagement.model;
 
-public class Product extends AbstractEntity {
+import java.io.Serializable;
+
+public class Product extends AbstractEntity implements Serializable {
+    private static final long serialVersionUID = 1L;
+
     private String name;
     private String category;
     private double price;
