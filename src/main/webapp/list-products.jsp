@@ -61,7 +61,7 @@
       </form>
 
       <!-- Product Table -->
-      <form method="post" action="products">
+      <form method="post" action="products?action=delete-product">
         <input type="hidden" name="action" value="delete" />
         <table>
           <thead>
@@ -72,12 +72,12 @@
           <tbody>
           <c:forEach var="temp" items="${products}">
             <tr>
-              <td><input type="checkbox" name="selected"/></td>
+              <td><input type="checkbox" name="product-ids" value="${temp.getId()}"/></td>
               <td>${temp.getId()}</td>
               <td>${temp.getName()}</td>
               <td>Rs. ${temp.getPrice()}</td>
               <td>${temp.getCategory()}</td>
-              <td><a href="update-product.jsp"><i class="fas fa-pen"></i> Edit</a></td>
+              <td><a href="products?action=update-product&id=${temp.getId()}"><i class="fas fa-pen"></i> Edit</a></td>
             </tr>
           </c:forEach>
           </tbody>

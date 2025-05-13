@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.util.Arrays;
 import java.util.List;
 
 @WebServlet("/products")
@@ -21,7 +22,6 @@ public class ProductController extends HttpServlet {
 
         String sortBy = request.getParameter("sortBy");
         if (sortBy == null || sortBy.isEmpty()) sortBy = "id";
-
 
         switch (action) {
             case "list":
@@ -48,11 +48,17 @@ public class ProductController extends HttpServlet {
                 );
                 service.addProduct(product);
                 break;
+            case "delete-product":
+                String[] selectedIds = request.getParameterValues("product-ids");
+                System.out.println(Arrays.toString(selectedIds));
+                if (selectedIds != null && selectedIds.length > 0) {
+                    service.deleteProductsById(Arrays.asList(selectedIds));
+                }
+                break;
             default:
                 response.sendRedirect("products");
                 break;
         }
         response.sendRedirect("products");
-
     }
 }

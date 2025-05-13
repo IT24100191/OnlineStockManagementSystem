@@ -8,4 +8,5 @@ public interface IProductService {
     List<Product> getSortedProducts(String sortBy);
     void addProduct(Product product);
     void deleteProductsById(List<String> ids);
+
 }
