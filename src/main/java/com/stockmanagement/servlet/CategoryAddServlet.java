@@ -16,7 +16,6 @@ public class CategoryAddServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        // Display the add category form (GET request)
         request.getRequestDispatcher("/WEB-INF/category/add.jsp").forward(request, response);
     }
 

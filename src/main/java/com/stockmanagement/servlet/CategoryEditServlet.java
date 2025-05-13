@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 @WebServlet(name = "CategoryEditServlet", value = "/categories/edit")
-public class CategoryEditServlet extends HttpServlet {
+public class CategoryEditServlet extends HttpServlet{
     private final CategoryService categoryService = new CategoryService();
 
     @Override

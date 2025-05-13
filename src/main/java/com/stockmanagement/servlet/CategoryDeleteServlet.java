@@ -9,12 +9,12 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 @WebServlet(name = "CategoryDeleteServlet", value = "/categories/delete")
-public class CategoryDeleteServlet extends HttpServlet{
+public class CategoryDeleteServlet extends HttpServlet {
     private final CategoryService categoryService = new CategoryService();
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
+            throws ServletException, IOException{
         try {
             int id = Integer.parseInt(request.getParameter("id"));
             categoryService.deleteCategory(id);

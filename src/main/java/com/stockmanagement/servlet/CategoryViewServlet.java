@@ -10,12 +10,12 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 @WebServlet(name = "CategoryViewServlet", value = "/categories/view")
-public class CategoryViewServlet extends HttpServlet {
+public class CategoryViewServlet extends HttpServlet{
     private final CategoryService categoryService = new CategoryService();
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException{
+            throws ServletException, IOException {
         try {
             int id = Integer.parseInt(request.getParameter("id"));
             Category category = categoryService.getCategoryById(id);

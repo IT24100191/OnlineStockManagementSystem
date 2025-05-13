@@ -17,7 +17,6 @@ public class CategoryListServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        // Clear any session messages
         if (request.getSession().getAttribute("message") != null) {
             request.setAttribute("message", request.getSession().getAttribute("message"));
             request.getSession().removeAttribute("message");
@@ -28,11 +27,9 @@ public class CategoryListServlet extends HttpServlet {
             request.getSession().removeAttribute("error");
         }
 
-        // Get the search query parameter if available
         String searchQuery = request.getParameter("search");
         List<Category> categories;
 
-        // If there's a search query, filter the categories
         if (searchQuery != null && !searchQuery.trim().isEmpty()) {
             categories = categoryService.searchCategories(searchQuery);
             request.setAttribute("search", searchQuery);
