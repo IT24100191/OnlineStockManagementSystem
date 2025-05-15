@@ -1,96 +1,33 @@
-package com.stockmanagement.model;
+package model;
 
-import java.io.Serializable;
 import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
 
-public class Product extends AbstractEntity implements Serializable {
-    private static final long serialVersionUID = 1L;
 
+public class Product {
+    private String id;
     private String name;
     private String category;
-    private double price;
     private int quantity;
-    private int stockAlertLimit;
+    private String unit;
     private LocalDate expiryDate;
 
-    public Product(String id, String name, String category, double price, int quantity, int stockAlertLimit, LocalDate expiryDate) {
-        super(id);
+    public Product(String id, String name, String category, int quantity, String unit, LocalDate expiryDate) {
+        this.id = id;
         this.name = name;
         this.category = category;
-        this.price = price;
         this.quantity = quantity;
-        this.stockAlertLimit = stockAlertLimit;
+        this.unit = unit;
         this.expiryDate = expiryDate;
     }
 
-    public String getName() {
-        return name;
-    }
+    public String getId() { return id; }
+    public String getName() { return name; }
+    public String getCategory() { return category; }
+    public int getQuantity() { return quantity; }
+    public String getUnit() { return unit; }
+    public LocalDate getExpiryDate() { return expiryDate; }
 
-    public void setName(String name) {
-        this.name = name;
-    }
+    public void setQuantity(int quantity) { this.quantity = quantity; }
 
-    public String getCategory() {
-        return category;
-    }
 
-    public void setCategory(String category) {
-        this.category = category;
-    }
-
-    public double getPrice() {
-        return price;
-    }
-
-    public void setPrice(double price) {
-        this.price = price;
-    }
-
-    public int getQuantity() {
-        return quantity;
-    }
-
-    public void setQuantity(int quantity) {
-        this.quantity = quantity;
-    }
-
-    public int getStockAlertLimit() {
-        return stockAlertLimit;
-    }
-
-    public void setStockAlertLimit(int stockAlertLimit) {
-        this.stockAlertLimit = stockAlertLimit;
-    }
-
-    public LocalDate getExpiryDate() {
-        return expiryDate;
-    }
-
-    public void setExpiryDate(LocalDate expiryDate) {
-        this.expiryDate = expiryDate;
-    }
-
-    @Override
-    public String toFileString() {
-        return id + "," + name + "," + category + "," + price + "," + quantity + "," + stockAlertLimit + "," + expiryDate;
-    }
-
-    public static Product fromFileString(String fileString) {
-        String[] parts = fileString.split(",");
-
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
-        LocalDate expiryDate = parts.length > 6 ? LocalDate.parse(parts[6], formatter) : LocalDate.now();
-
-        return new Product(
-                parts[0],
-                parts[1],
-                parts[2],
-                Double.parseDouble(parts[3]),
-                Integer.parseInt(parts[4]),
-                Integer.parseInt(parts[5]),
-                expiryDate
-        );
-    }
 }
