@@ -5,7 +5,7 @@ import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class CategoryService {
+public class CategoryService{
     private static final String DB_FILE = " categories_db.txt";
     private static final String SEPARATOR = "|||";
 
@@ -54,9 +54,9 @@ public class CategoryService {
                 .orElse(null);
     }
 
-    public List<Category> searchCategories(String searchQuery) {
+    public List<Category> searchCategories(String searchQuery){
         List<Category> filteredCategories = new ArrayList<>();
-        for (Category category : getAllCategories()) {
+        for (Category category : getAllCategories()){
             if (category.getName().toLowerCase().contains(searchQuery.toLowerCase()) ||
                     category.getDescription().toLowerCase().contains(searchQuery.toLowerCase())) {
                 filteredCategories.add(category);
@@ -65,7 +65,7 @@ public class CategoryService {
         return filteredCategories;
     }
 
-    public void addCategory(Category category) throws IOException {
+    public void addCategory(Category category) throws IOException{
         List<Category> categories = getAllCategories();
         int newId = categories.stream().mapToInt(Category::getId).max().orElse(0) + 1;
         category.setId(newId);
@@ -77,7 +77,7 @@ public class CategoryService {
         }
     }
 
-    public void updateCategory(Category category) throws IOException {
+    public void updateCategory(Category category) throws IOException{
         List<Category> categories = getAllCategories();
         categories.removeIf(c -> c.getId() == category.getId());
         categories.add(category);
