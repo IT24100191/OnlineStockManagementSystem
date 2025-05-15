@@ -9,16 +9,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c1645d58-9d85-49e9-98c7-a7164beb38d0" name="Changes" comment="supplier management system">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/SupplierServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/SupplierServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dao/SupplierDAO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/supplier-form.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/supplier-form.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/supplier-list.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/supplier-list.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/controller/SupplierServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controller/SupplierServlet.class" afterDir="false" />
-    </list>
+    <list default="true" id="c1645d58-9d85-49e9-98c7-a7164beb38d0" name="Changes" comment="Update data store method" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -228,7 +219,7 @@
       <workItem from="1747074595999" duration="7986000" />
       <workItem from="1747235384609" duration="934000" />
       <workItem from="1747236331634" duration="1666000" />
-      <workItem from="1747285880251" duration="1140000" />
+      <workItem from="1747285880251" duration="1577000" />
     </task>
     <task id="LOCAL-00001" summary="supplier">
       <option name="closed" value="true" />
@@ -262,7 +253,15 @@
       <option name="project" value="LOCAL" />
       <updated>1746511878689</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Update data store method">
+      <option name="closed" value="true" />
+      <created>1747287461036</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1747287461037</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -288,6 +287,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="supplier" />
     <MESSAGE value="supplier management system" />
-    <option name="LAST_COMMIT_MESSAGE" value="supplier management system" />
+    <MESSAGE value="Update data store method" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update data store method" />
   </component>
 </project>
