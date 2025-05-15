@@ -1,6 +1,6 @@
 package controller;
 
-import dao.SupplierDAO;
+import util.SupplierFileUtil;
 import model.Supplier;
 
 import javax.servlet.*;
@@ -9,10 +9,12 @@ import javax.servlet.annotation.*;
 import java.io.IOException;
 import java.util.List;
 
-@WebServlet(name = "SupplierServlet", urlPatterns = {"/SupplierServlet", "/"})
+@WebServlet(name = "SupplierServlet", urlPatterns = {"/SupplierServlet"})
 public class SupplierServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String action = request.getParameter("action");
+
+        String filePath = getServletContext().getRealPath("/WEB-INF/data/suppliers.txt");
 
         if (action == null) action = "list";
 
@@ -22,22 +24,22 @@ public class SupplierServlet extends HttpServlet {
                 break;
             case "edit":
                 int id = Integer.parseInt(request.getParameter("id"));
-                Supplier supplier = SupplierDAO.getSupplierById(id);
+                Supplier supplier = SupplierFileUtil.getSupplierById(id, filePath);
                 request.setAttribute("supplier", supplier);
                 request.getRequestDispatcher("/supplier-form.jsp").forward(request, response);
                 break;
             case "delete":
                 int deleteId = Integer.parseInt(request.getParameter("id"));
-                SupplierDAO.deleteSupplier(deleteId);
+                SupplierFileUtil.deleteSupplier(deleteId, filePath);
                 response.sendRedirect(request.getContextPath() + "/SupplierServlet");
                 break;
             default:
                 String search = request.getParameter("search");
                 List<Supplier> suppliers;
                 if (search != null && !search.trim().isEmpty()) {
-                    suppliers = SupplierDAO.getSuppliersByName(search.trim());
+                    suppliers = SupplierFileUtil.getSuppliersByName(search.trim(), filePath);
                 } else {
-                    suppliers = SupplierDAO.getAllSuppliers();
+                    suppliers = SupplierFileUtil.getAllSuppliers(filePath);
                 }
                 request.setAttribute("supplierList", suppliers);
                 request.setAttribute("search", search != null ? search : "");
@@ -46,6 +48,7 @@ public class SupplierServlet extends HttpServlet {
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        String filePath = getServletContext().getRealPath("/WEB-INF/data/suppliers.txt");
         int id = request.getParameter("id").isEmpty() ? 0 : Integer.parseInt(request.getParameter("id"));
         String name = request.getParameter("name");
         String email = request.getParameter("email");
@@ -54,9 +57,9 @@ public class SupplierServlet extends HttpServlet {
         Supplier supplier = new Supplier(id, name, email, phone);
 
         if (id == 0) {
-            SupplierDAO.addSupplier(supplier);
+            SupplierFileUtil.addSupplier(supplier, filePath);
         } else {
-            SupplierDAO.updateSupplier(supplier);
+            SupplierFileUtil.updateSupplier(supplier, filePath);
         }
 
         response.sendRedirect(request.getContextPath() + "/SupplierServlet");

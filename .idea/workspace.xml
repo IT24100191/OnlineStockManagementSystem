@@ -1,20 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="OnlineStockManagementSystem:war" />
+    </artifacts-to-build>
+  </component>
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c1645d58-9d85-49e9-98c7-a7164beb38d0" name="Changes" comment="supplier management system">
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/controller/SupplierServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/SupplierServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dao/SupplierDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/SupplierDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dao/SupplierDAO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/supplier-form.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/supplier-form.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/supplier-list.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/supplier-list.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/controller/SupplierServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controller/SupplierServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/dao/SupplierDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/dao/SupplierDAO.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,42 +53,45 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "Smart Tomcat.Tomcat: InventoryManagementSystem (2).executor": "Debug",
-    "Smart Tomcat.Tomcat: InventoryManagementSystem.executor": "Debug",
-    "Tomcat Server.Tomcat .executor": "Debug",
-    "git-widget-placeholder": "SupplierManagement",
-    "ignore.virus.scanning.warn.message": "true",
-    "junie.onboarding.icon.badge.shown": "true",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/FixHello123/Downloads/InventoryManagementSystem copy/InventoryManagementSystem copy",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "SDKs",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "org.jetbrains.plugins.github.ui.GithubSettingsConfigurable",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;Smart Tomcat.Tomcat: InventoryManagementSystem (2).executor&quot;: &quot;Debug&quot;,
+    &quot;Smart Tomcat.Tomcat: InventoryManagementSystem.executor&quot;: &quot;Debug&quot;,
+    &quot;Tomcat Server.Tomcat .executor&quot;: &quot;Debug&quot;,
+    &quot;Tomcat Server.Tomcat..executor&quot;: &quot;Debug&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;SupplierManagement&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/FixHello123/Downloads/InventoryManagementSystem copy/InventoryManagementSystem copy&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Artifacts&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;org.jetbrains.plugins.github.ui.GithubSettingsConfigurable&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected="Smart Tomcat.Tomcat: InventoryManagementSystem">
-    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
-      <module name="OnlineStockManagementSystem" />
-      <option name="filePath" />
-      <method v="2" />
-    </configuration>
-    <configuration name="Tomcat " type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat " ALTERNATIVE_JRE_ENABLED="true" ALTERNATIVE_JRE_PATH="$APPLICATION_HOME_DIR$/jbr" nameIsGenerated="true">
+    <configuration name="Tomcat " type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat " ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
+      <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8081/InventoryManagementSystem/" />
       <option name="UPDATING_POLICY" value="restart-server" />
-      <deployment />
+      <deployment>
+        <artifact name="OnlineStockManagementSystem:war">
+          <settings>
+            <option name="CONTEXT_PATH" value="/OnlineStockManagementSystem_war" />
+          </settings>
+        </artifact>
+      </deployment>
       <server-settings>
-        <option name="BASE_DIRECTORY_NAME" value="a0f45d8b-18b1-43da-bc7f-6acef3bfb16e" />
+        <option name="BASE_DIRECTORY_NAME" value="7139e213-027e-43fe-a803-7856233a0521" />
       </server-settings>
       <predefined_log_file enabled="true" id="Tomcat" />
       <predefined_log_file enabled="true" id="Tomcat Catalina" />
@@ -93,7 +99,7 @@
       <predefined_log_file id="Tomcat Host Manager" />
       <predefined_log_file id="Tomcat Localhost Access" />
       <RunnerSettings RunnerId="Debug">
-        <option name="DEBUG_PORT" value="51104" />
+        <option name="DEBUG_PORT" value="51111" />
       </RunnerSettings>
       <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
         <option name="USE_ENV_VARIABLES" value="true" />
@@ -157,6 +163,9 @@
       </ConfigurationWrapper>
       <method v="2">
         <option name="Make" enabled="true" />
+        <option name="BuildArtifacts" enabled="true">
+          <artifact name="OnlineStockManagementSystem:war" />
+        </option>
       </method>
     </configuration>
     <configuration name="Tomcat: InventoryManagementSystem" type="com.poratu.idea.plugins.tomcat">
@@ -168,9 +177,6 @@
       <option name="catalinaBase" value="C:\Program Files\Apache Software Foundation\Tomcat 9.0" />
       <option name="contextPath" value="/InventoryManagementSystem" />
       <option name="docBase" value="$PROJECT_DIR$/src/main/webapp" />
-      <option name="envOptions">
-        <map />
-      </option>
       <option name="extraClassPath" value="" />
       <option name="port" value="8081" />
       <option name="tomcatInfo">
@@ -217,6 +223,12 @@
       <workItem from="1746099375045" duration="155000" />
       <workItem from="1746100148113" duration="1401000" />
       <workItem from="1746102955444" duration="15008000" />
+      <workItem from="1746789618405" duration="426000" />
+      <workItem from="1746790062728" duration="1573000" />
+      <workItem from="1747074595999" duration="7986000" />
+      <workItem from="1747235384609" duration="934000" />
+      <workItem from="1747236331634" duration="1666000" />
+      <workItem from="1747285880251" duration="1140000" />
     </task>
     <task id="LOCAL-00001" summary="supplier">
       <option name="closed" value="true" />
