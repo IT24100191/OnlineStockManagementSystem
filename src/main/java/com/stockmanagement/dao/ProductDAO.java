@@ -1,60 +1,124 @@
-package com.stockmanagement.dao;
+package dao;
 
-import com.stockmanagement.model.Product;
-
+import model.Product;
 import java.io.*;
+import java.time.LocalDate;
+import java.time.format.DateTimeParseException;
 import java.util.ArrayList;
 import java.util.List;
 
 public class ProductDAO {
-    private static final String FILE_PATH = "product-data.txt";
+    private static final String FILE_PATH = "C:/temp/products.txt";
 
-    private void ensureFileExists() {
-        File file = new File(FILE_PATH);
-        try {
-            if (!file.exists()) {
-                file.createNewFile();
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
+    static {
+        // Ensure the directory exists
+        File dir = new File("C:/temp");
+        if (!dir.exists()) {
+            dir.mkdirs();
         }
     }
 
-    public List<Product> getAllProducts() {
-        ensureFileExists();
-        List<Product> products = new ArrayList<Product>();
+    public static List<Product> readAll() {
+        List<Product> list = new ArrayList<>();
+        File file = new File(FILE_PATH);
 
-        try (BufferedReader br = new BufferedReader(new FileReader(FILE_PATH))) {
+        if (!file.exists()) {
+            System.out.println("File does not exist: " + FILE_PATH);
+            return list; // Return empty list if file doesn't exist
+        }
+
+        try (BufferedReader br = new BufferedReader(new FileReader(file))) {
             String line;
             while ((line = br.readLine()) != null) {
-                products.add(Product.fromFileString(line));
+                String[] parts = line.split(",");
+                if (parts.length == 6) {
+                    try {
+                        list.add(new Product(
+                                parts[0].trim(),
+                                parts[1].trim(),
+                                parts[2].trim(),
+                                Integer.parseInt(parts[3].trim()),
+                                parts[4].trim(),
+                                LocalDate.parse(parts[5].trim())
+                        ));
+                    } catch (NumberFormatException | DateTimeParseException e) {
+                        System.out.println("Invalid data in line: " + line + " - " + e.getMessage());
+                    }
+                } else {
+                    System.out.println("Invalid line format: " + line);
+                }
             }
         } catch (IOException e) {
-            e.printStackTrace();
+            System.out.println("Error reading file " + FILE_PATH + ": " + e.getMessage());
         }
-
-        return products;
+        return list;
     }
 
-    public void saveAllProducts(List<Product> products) {
-        ensureFileExists();
-        try (BufferedWriter bw = new BufferedWriter(new FileWriter(FILE_PATH))) {
-            for (Product product : products) {
-                bw.write(product.toFileString());
-                bw.newLine();
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
+    public static void addProduct(Product p) {
+        if (p == null || getById(p.getId()) != null) return; // Prevent null or duplicate products
 
-    public void addProduct(Product product) {
-        ensureFileExists();
         try (BufferedWriter bw = new BufferedWriter(new FileWriter(FILE_PATH, true))) {
-            bw.write(product.toFileString());
+            bw.write(String.join(",",
+                    p.getId(), p.getName(), p.getCategory(),
+                    String.valueOf(p.getQuantity()), p.getUnit(), p.getExpiryDate().toString()));
             bw.newLine();
         } catch (IOException e) {
-            e.printStackTrace();
+            System.out.println("Error adding product: " + e.getMessage());
+        }
+    }
+
+    public static Product getById(String id) {
+        if (id == null) return null;
+        for (Product p : readAll()) {
+            if (p.getId().equals(id)) return p;
+        }
+        return null;
+    }
+
+    public static void updateQuantity(String id, int soldQty) {
+        if (id == null || soldQty < 0) return;
+        List<Product> products = readAll();
+        for (Product p : products) {
+            if (p.getId().equals(id)) {
+                int newQty = p.getQuantity() - soldQty;
+                if (newQty >= 0) p.setQuantity(newQty);
+                overwrite(products);
+                break;
+            }
+        }
+    }
+
+    public static void deleteProduct(String id) {
+        if (id == null) return;
+        List<Product> products = readAll();
+        products.removeIf(p -> p.getId().equals(id));
+        overwrite(products);
+    }
+
+    public static void changeQuantity(String id, int newQty) {
+        if (id == null || newQty < 0) return;
+        List<Product> products = readAll();
+        for (Product p : products) {
+            if (p.getId().equals(id)) {
+                p.setQuantity(newQty);
+                break;
+            }
+        }
+        overwrite(products);
+    }
+
+    private static void overwrite(List<Product> products) {
+        try (BufferedWriter bw = new BufferedWriter(new FileWriter(FILE_PATH, false))) {
+            for (Product p : products) {
+                if (p != null) {
+                    bw.write(String.join(",",
+                            p.getId(), p.getName(), p.getCategory(),
+                            String.valueOf(p.getQuantity()), p.getUnit(), p.getExpiryDate().toString()));
+                    bw.newLine();
+                }
+            }
+        } catch (IOException e) {
+            System.out.println("Error overwriting file: " + e.getMessage());
         }
     }
 }
