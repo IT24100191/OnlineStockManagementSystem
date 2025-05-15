@@ -15,19 +15,19 @@
             font-family: 'Segoe UI', Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background: linear-gradient(135deg, #dbe4ea 0%, #52ab98 100%);
+            background: #ECE9DF;
             min-height: 100vh;
         }
         .container {
             max-width: 600px;
             margin: 40px auto;
-            background: #fff;
+            background: #F5F3ED;
             padding: 30px 24px 24px 24px;
             border-radius: 18px;
-            box-shadow: 0 8px 32px rgba(43,103,119,0.10);
+            box-shadow: 0 8px 32px rgba(34,41,54,0.10);
         }
         h1 {
-            color: #2b6777;
+            color: #232B38;
             text-align: center;
             margin-bottom: 24px;
         }
@@ -37,19 +37,25 @@
         label {
             display: block;
             margin-bottom: 6px;
-            color: #2b6777;
+            color: #7B818A;
             font-weight: 600;
         }
         input[type="text"],
         input[type="email"] {
             width: 100%;
             padding: 10px;
-            border: 1px solid #dbe4ea;
+            border: 1px solid #A48C6B;
             border-radius: 6px;
             box-sizing: border-box;
-            background: #f2f2f2;
-            color: #2b6777;
+            background: #ECE9DF;
+            color: #232B38;
             font-size: 1rem;
+            transition: border 0.2s;
+        }
+        input[type="text"]:focus,
+        input[type="email"]:focus {
+            border: 1.5px solid #232B38;
+            outline: none;
         }
         .button-group {
             margin-top: 24px;
@@ -66,20 +72,21 @@
             transition: background 0.2s, color 0.2s, transform 0.2s;
         }
         .save-button {
-            background: linear-gradient(90deg, #2b6777 60%, #52ab98 100%);
+            background: #232B38;
             color: #fff;
         }
         .save-button:hover {
-            background: linear-gradient(90deg, #52ab98 60%, #2b6777 100%);
-            color: #2b6777;
+            background: #E2B44A;
+            color: #232B38;
             transform: translateY(-2px) scale(1.04);
         }
         .cancel-button {
-            background: #dbe4ea;
-            color: #2b6777;
+            background: #ECE9DF;
+            color: #232B38;
+            border: 1px solid #A48C6B;
         }
         .cancel-button:hover {
-            background: #52ab98;
+            background: #A48C6B;
             color: #fff;
             transform: translateY(-2px) scale(1.04);
         }

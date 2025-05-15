@@ -13,84 +13,129 @@
             font-family: 'Segoe UI', Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background: linear-gradient(135deg, #dbe4ea 0%, #52ab98 100%);
+            background: #ECE9DF;
             min-height: 100vh;
         }
         .container {
             max-width: 1000px;
             margin: 40px auto;
-            background: #fff;
+            background: #F5F3ED;
             padding: 30px 24px 24px 24px;
             border-radius: 18px;
-            box-shadow: 0 8px 32px rgba(43,103,119,0.10);
+            box-shadow: 0 8px 32px rgba(34,41,54,0.10);
         }
         h1 {
-            color: #2b6777;
+            color: #232B38;
             text-align: center;
             margin-bottom: 24px;
+        }
+        .flex-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 24px;
+            flex-wrap: wrap;
+            gap: 12px;
         }
         .add-button {
             display: inline-block;
             padding: 12px 28px;
-            background: linear-gradient(90deg, #2b6777 60%, #52ab98 100%);
+            background: #232B38;
             color: #fff;
             text-decoration: none;
             border-radius: 8px;
-            margin-bottom: 24px;
             font-weight: 600;
             font-size: 1rem;
             transition: background 0.2s, color 0.2s, transform 0.2s;
+            border: none;
+            box-shadow: 0 2px 8px rgba(34,41,54,0.10);
         }
         .add-button:hover {
-            background: linear-gradient(90deg, #52ab98 60%, #2b6777 100%);
-            color: #2b6777;
+            background: #E2B44A;
+            color: #232B38;
             transform: translateY(-2px) scale(1.04);
+        }
+        .search-form {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin: 0;
+            position: relative;
+        }
+        .search-form input[type="text"] {
+            padding: 10px;
+            width: 260px;
+            border-radius: 6px;
+            border: 1px solid #A48C6B;
+            font-size: 1rem;
+            color: #232B38;
+            background: #ECE9DF;
+            transition: border 0.2s;
+        }
+        .search-form input[type="text"]:focus {
+            border: 1.5px solid #232B38;
+            outline: none;
+        }
+        .search-form button {
+            padding: 10px 18px;
+            border-radius: 6px;
+            border: none;
+            background: #E2B44A;
+            color: #232B38;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        .search-form button:hover {
+            background: #A48C6B;
+            color: #fff;
         }
         table {
             width: 100%;
             border-collapse: collapse;
             margin-top: 20px;
-            background: #fff;
+            background: #F5F3ED;
         }
         th, td {
             padding: 14px 10px;
             text-align: left;
-            border-bottom: 1px solid #dbe4ea;
+            border-bottom: 1px solid #ECE9DF;
         }
         th {
-            background-color: #f2f2f2;
-            color: #2b6777;
+            background-color: #7B818A;
+            color: #fff;
             font-weight: 700;
         }
         tr:hover {
-            background-color: #dbe4ea;
+            background-color: #ECE9DF;
         }
         .action-link {
-            color: #2b6777;
+            color: #232B38;
             text-decoration: none;
             margin-right: 10px;
             font-weight: 600;
             transition: color 0.2s;
         }
         .action-link:hover {
-            color: #52ab98;
+            color: #E2B44A;
         }
         .action-link.delete {
-            color: #f44336;
+            color: #b23a48;
         }
         .action-link.delete:hover {
-            color: #2b6777;
+            color: #232B38;
         }
     </style>
 </head>
 <body>
     <div class="container">
         <h1>Supplier List</h1>
-        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px; flex-wrap: wrap; gap: 12px;">
+        <div class="flex-bar">
             <a href="SupplierServlet?action=new" class="add-button">Add New Supplier</a>
-            <form method="get" action="SupplierServlet" style="display: flex; align-items: center; gap: 8px; margin: 0;">
-                <input type="text" name="search" placeholder="Search by supplier name..." value="<%= request.getAttribute("search") != null ? request.getAttribute("search") : "" %>" style="padding: 10px; width: 260px; border-radius: 6px; border: 1px solid #dbe4ea; font-size: 1rem; color: #2b6777; background: #f2f2f2;">
-                <button type="submit" style="padding: 10px 18px; border-radius: 6px; border: none; background: linear-gradient(90deg, #2b6777 60%, #52ab98 100%); color: #fff; font-weight: 600; font-size: 1rem; cursor: pointer; transition: background 0.2s;">Search</button>
+            <form method="get" action="SupplierServlet" class="search-form">
+                <input type="text" name="search" placeholder="Search by supplier name..." value="<%= request.getAttribute("search") != null ? request.getAttribute("search") : "" %>">
+                <button type="submit">Search</button>
             </form>
         </div>
         <table>
