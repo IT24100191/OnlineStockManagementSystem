@@ -1,4 +1,4 @@
-package com.SalesManagement.model;
+package com.stockmanagement.model;
 
 
     public class Sale {
