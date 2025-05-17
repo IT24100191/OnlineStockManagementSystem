@@ -1,4 +1,4 @@
-<%@ page import="model.Product" %>
+<%@ page import="model.Stock" %>
 <%@ page import="java.util.*" %>
 <%@ page import="java.time.LocalDate" %>
 <%@ page contentType="text/html;charset=UTF-8" %>
@@ -97,7 +97,7 @@
     <h2>Stock Analysis</h2>
 
     <%
-        List<Product> sortedProducts = (List<Product>) request.getAttribute("sortedProducts");
+        List<Stock> sortedProducts = (List<Stock>) request.getAttribute("sortedProducts");
         if (sortedProducts == null) {
     %>
     <p class="error">Error: Unable to load products for analysis.</p>
@@ -112,7 +112,7 @@
             <%
                 if (!sortedProducts.isEmpty()) {
                     boolean hasLowStock = false;
-                    for (Product p : sortedProducts) {
+                    for (Stock p : sortedProducts) {
                         if (p.getQuantity() < 10) {
                             hasLowStock = true;
             %>
@@ -138,7 +138,7 @@
             <%
                 if (!sortedProducts.isEmpty()) {
                     boolean hasExpiringSoon = false;
-                    for (Product p : sortedProducts) {
+                    for (Stock p : sortedProducts) {
                         if (p.getExpiryDate() != null && p.getExpiryDate().isBefore(LocalDate.now().plusDays(30))) {
                             hasExpiringSoon = true;
             %>
