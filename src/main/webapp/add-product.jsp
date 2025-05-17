@@ -36,14 +36,14 @@
       <div class="form-group">
         <label>Category</label>
         <select name="category">
-          <option value="Snacks">Electronics</option>
-          <option value="Beverage">Clothing</option>
+          <option value="Snacks">Snacks</option>
+          <option value="Beverage">Beverages</option>
         </select>
       </div>
 
       <div class="form-group">
         <label>Expiry Date</label>
-        <input type="date" name="exp-date" value="${product.getExpiryDate()}" required/>
+        <input type="date" name="exp-date" id="exp-date"  required/>
       </div>
 
       <div class="form-group">
@@ -55,7 +55,13 @@
     </form>
   </div>
 </div>
-
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const expDateInput = document.getElementById("exp-date");
+    const today = new Date().toISOString().split('T')[0];
+    expDateInput.setAttribute("min", today);
+  });
+</script>
 <script src="./js/main.js"></script>
 </body>
 </html>

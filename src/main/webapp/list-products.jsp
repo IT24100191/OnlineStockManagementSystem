@@ -22,6 +22,7 @@
   <div class="container">
     <%@include file="partials/navbar.jsp"%>
 
+
     <div class="content-container">
       <div class="add-btn-wrapper">
         <a href="${pageContext.request.contextPath}/add-product.jsp" class="add-btn">
@@ -45,6 +46,8 @@
         <input type="text" name="search" id="productSearch" placeholder="Search by product name..." />
       </div>
 
+      <c:choose>
+        <c:when test="${not empty products}">
       <!-- Recently Added Products Section -->
       <div class="recent-products-section">
         <h3><i class="fas fa-clock-rotate-left"></i> Recently Added Products</h3>
@@ -120,6 +123,13 @@
       </form>
 
     </div>
+    </c:when>
+    <c:otherwise>
+      <div>
+        <p style="margin-left: 50px"><strong>No Products in the inventory</strong></p>
+      </div>
+    </c:otherwise>
+    </c:choose>
   </div>
   <script src="./js/main.js"></script>
   <script src="./js/products.js"></script>

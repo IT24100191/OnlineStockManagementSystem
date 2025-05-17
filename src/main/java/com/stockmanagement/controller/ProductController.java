@@ -41,7 +41,10 @@ public class ProductController extends HttpServlet {
                     response.sendRedirect("products");
                     return;
                 }
+                System.out.println(product.getExpiryDate().toString());
                 request.setAttribute("product", product);
+                request.setAttribute("exp-date", product.getExpiryDate().toString());
+                request.setAttribute("minDate", LocalDate.now().toString());
                 request.getRequestDispatcher("update-product.jsp").forward(request, response);
                 break;
 
