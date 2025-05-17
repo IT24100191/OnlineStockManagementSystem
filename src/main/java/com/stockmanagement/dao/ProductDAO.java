@@ -1,6 +1,7 @@
 package com.stockmanagement.dao;
 
 import com.stockmanagement.model.Product;
+import com.stockmanagement.util.ProductStack;
 
 import java.io.*;
 import java.util.ArrayList;
@@ -23,6 +24,7 @@ public class ProductDAO {
     public List<Product> getAllProducts() {
         ensureFileExists();
         List<Product> products = new ArrayList<Product>();
+
 
         try (BufferedReader br = new BufferedReader(new FileReader(FILE_PATH))) {
             String line;

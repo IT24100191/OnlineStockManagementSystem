@@ -1,4 +1,4 @@
-package model;
+package com.stockmanagement.model;
 
 import java.time.LocalDate;
 

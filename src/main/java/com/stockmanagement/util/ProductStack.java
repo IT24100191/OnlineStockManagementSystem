@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ProductStack {
-    private List<Product> stack;
+    protected List<Product> stack;
 
     public ProductStack() {
         stack = new ArrayList<>();
@@ -32,5 +32,8 @@ public class ProductStack {
     public List<Product> getAllProducts() {
         return new ArrayList<>(stack);
     }
-}
 
+    public void clear() {
+        stack.clear();
+    }
+}
