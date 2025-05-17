@@ -36,31 +36,20 @@
       <div class="form-group">
         <label>Category</label>
         <select name="category">
-          <option value="Electronics">Electronics</option>
-          <option value="Clothing">Clothing</option>
+          <option value="Snacks">Electronics</option>
+          <option value="Beverage">Clothing</option>
         </select>
       </div>
 
       <div class="form-group">
         <label>Expiry Date</label>
-        <input type="date" name="exp-date" required/>
+        <input type="date" name="exp-date" value="${product.getExpiryDate()}" required/>
       </div>
 
       <div class="form-group">
         <label><i class="fas fa-dollar-sign"></i> Price</label>
         <input type="number" name="price" step="0.01" required />
       </div>
-
-      <div class="form-group">
-        <label><i class="fas fa-layer-group"></i> Stock</label>
-        <input type="number" name="quantity" min="1" required />
-      </div>
-
-      <div class="form-group">
-        <label><i class="fas fa-bell"></i> Stock Alert Limit</label>
-        <input type="number" name="stock-alert-limit" min="0" required />
-      </div>
-
 
       <button type="submit">Add Product</button>
     </form>

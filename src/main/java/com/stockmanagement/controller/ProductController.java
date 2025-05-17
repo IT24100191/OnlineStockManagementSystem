@@ -40,8 +40,12 @@ public class ProductController extends HttpServlet {
                 break;
             case "list":
                 List<Product> products = service.getSortedProducts(sortBy);
+                int productCount = service.getProductsCount();
+
                 request.setAttribute("products", products);
+                request.setAttribute("productCount", productCount);
                 request.setAttribute("sortBy", sortBy);
+
                 request.getRequestDispatcher("list-products.jsp").forward(request, response);
                 break;
         }
@@ -61,8 +65,6 @@ public class ProductController extends HttpServlet {
                         request.getParameter("name"),
                         request.getParameter("category"),
                         Double.parseDouble(request.getParameter("price")),
-                        Integer.parseInt(request.getParameter("quantity")),
-                        Integer.parseInt(request.getParameter("stock-alert-limit")),
                         expDate
                 );
                 service.addProduct(product);
@@ -84,8 +86,6 @@ public class ProductController extends HttpServlet {
                         request.getParameter("name"),
                         request.getParameter("category"),
                         Double.parseDouble(request.getParameter("price")),
-                        Integer.parseInt(request.getParameter("quantity")),
-                        Integer.parseInt(request.getParameter("stock-alert-limit")),
                         expDateUpdate
                 );
                 service.updateProduct(product);

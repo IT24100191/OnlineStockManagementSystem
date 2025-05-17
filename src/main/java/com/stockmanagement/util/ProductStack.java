@@ -2,20 +2,35 @@ package com.stockmanagement.util;
 
 import com.stockmanagement.model.Product;
 
-import java.util.Stack;
+import java.util.ArrayList;
+import java.util.List;
 
 public class ProductStack {
-    private final Stack<Product> stack = new Stack<Product>();
+    private List<Product> stack;
 
-    public void push(Product product) {
-        stack.push(product);
+    public ProductStack() {
+        stack = new ArrayList<>();
+    }
+
+    public void push(Product p) {
+        stack.add(p);
     }
 
     public Product pop() {
-        return stack.isEmpty() ? null : stack.pop();
+        if (!isEmpty()) return stack.remove(stack.size() - 1);
+        return null;
     }
 
     public boolean isEmpty() {
         return stack.isEmpty();
     }
+
+    public int size() {
+        return stack.size();
+    }
+
+    public List<Product> getAllProducts() {
+        return new ArrayList<>(stack);
+    }
 }
+

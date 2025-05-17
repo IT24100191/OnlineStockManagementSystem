@@ -35,21 +35,7 @@
           <i class="fas fa-cube"></i>
           <div>
             <h3>Product Count</h3>
-            <p>2</p>
-          </div>
-        </div>
-        <div class="card">
-          <i class="fas fa-coins"></i>
-          <div>
-            <h3>Inventory Value</h3>
-            <p>Rs. 17,000</p>
-          </div>
-        </div>
-        <div class="card">
-          <i class="fas fa-triangle-exclamation"></i>
-          <div>
-            <h3>Out of Stock</h3>
-            <p>0</p>
+            <p>${productCount}</p>
           </div>
         </div>
       </div>

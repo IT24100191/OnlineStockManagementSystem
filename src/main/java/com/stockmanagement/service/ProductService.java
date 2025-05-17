@@ -68,4 +68,11 @@ public class ProductService implements IProductService {
             }
         }
     }
+
+    @Override
+    public int getProductsCount() {
+        return dao.getAllProducts().size();
+    }
+
+
 }

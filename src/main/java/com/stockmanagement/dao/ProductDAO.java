@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ProductDAO {
-    private static final String FILE_PATH = "product-data.txt";
+    private static final String FILE_PATH = "product-db.txt";
 
     private void ensureFileExists() {
         File file = new File(FILE_PATH);

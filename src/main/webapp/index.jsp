@@ -9,5 +9,6 @@
 </h1>
 <br/>
 <a href="products">products</a>
+<a href="categories/view">products</a>
 </body>
 </html>

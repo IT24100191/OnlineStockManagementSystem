@@ -10,17 +10,13 @@ public class Product extends AbstractEntity implements Serializable {
     private String name;
     private String category;
     private double price;
-    private int quantity;
-    private int stockAlertLimit;
     private LocalDate expiryDate;
 
-    public Product(String id, String name, String category, double price, int quantity, int stockAlertLimit, LocalDate expiryDate) {
+    public Product(String id, String name, String category, double price, LocalDate expiryDate) {
         super(id);
         this.name = name;
         this.category = category;
         this.price = price;
-        this.quantity = quantity;
-        this.stockAlertLimit = stockAlertLimit;
         this.expiryDate = expiryDate;
     }
 
@@ -48,22 +44,6 @@ public class Product extends AbstractEntity implements Serializable {
         this.price = price;
     }
 
-    public int getQuantity() {
-        return quantity;
-    }
-
-    public void setQuantity(int quantity) {
-        this.quantity = quantity;
-    }
-
-    public int getStockAlertLimit() {
-        return stockAlertLimit;
-    }
-
-    public void setStockAlertLimit(int stockAlertLimit) {
-        this.stockAlertLimit = stockAlertLimit;
-    }
-
     public LocalDate getExpiryDate() {
         return expiryDate;
     }
@@ -74,22 +54,20 @@ public class Product extends AbstractEntity implements Serializable {
 
     @Override
     public String toFileString() {
-        return id + "," + name + "," + category + "," + price + "," + quantity + "," + stockAlertLimit + "," + expiryDate;
+        return id + "," + name + "," + category + "," + price + "," + expiryDate;
     }
 
     public static Product fromFileString(String fileString) {
         String[] parts = fileString.split(",");
 
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
-        LocalDate expiryDate = parts.length > 6 ? LocalDate.parse(parts[6], formatter) : LocalDate.now();
+        LocalDate expiryDate = parts.length > 4 ? LocalDate.parse(parts[4], formatter) : LocalDate.now();
 
         return new Product(
                 parts[0],
                 parts[1],
                 parts[2],
                 Double.parseDouble(parts[3]),
-                Integer.parseInt(parts[4]),
-                Integer.parseInt(parts[5]),
                 expiryDate
         );
     }
