@@ -294,14 +294,62 @@ button[type="submit"]:hover {
     border-radius: 6px;
 }
 
-.low-stock {
-    animation: flashLowStock 1s ease-in-out infinite;
-    font-weight: bold;
-    color: #721c24;
-    border-left: 5px solid #dc3545;
+.recent-products-section {
+    margin-bottom: 50px;
+    background-color: #f9f9f9;
+    border: 2px solid #ddd;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
 }
 
-.low-stock td {
-    background-color: #f8d7da !important;
+.recent-products-section h3 {
+    font-size: 1.4rem;
+    margin-bottom: 15px;
+    color: #333;
+    display: flex;
+    align-items: center;
+    gap: 8px;
 }
+
+.recent-products-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.recent-products-table th,
+.recent-products-table td {
+    padding: 10px 15px;
+    border: 1px solid #ccc;
+    text-align: left;
+}
+
+.recent-products-table th {
+    background-color: #f0f0f0;
+    font-weight: 600;
+    color: #222;
+}
+
+.recent-products-table tr:nth-child(even) {
+    background-color: #fafafa;
+}
+
+.undo-btn {
+    margin-top: 15px;
+    background-color: #ff9800;
+    color: white;
+    border: none;
+    padding: 10px 14px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.undo-btn:hover {
+    background-color: #e08800;
+}
+
 

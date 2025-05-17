@@ -45,6 +45,33 @@
         <input type="text" name="search" id="productSearch" placeholder="Search by product name..." />
       </div>
 
+      <!-- Recently Added Products Section -->
+      <div class="recent-products-section">
+        <h3><i class="fas fa-clock-rotate-left"></i> Recently Added Products</h3>
+        <table class="recent-products-table">
+          <thead>
+          <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Type</th>
+            <th>Expiry Date</th>
+          </tr>
+          </thead>
+          <tbody>
+          <c:forEach var="recent" items="${recentProducts}">
+            <tr>
+              <td>${recent.getId()}</td>
+              <td>${recent.getName()}</td>
+              <td>Rs. ${recent.getPrice()}</td>
+              <td>${recent.getCategory()}</td>
+              <td>${recent.getExpiryDate()}</td>
+            </tr>
+          </c:forEach>
+          </tbody>
+        </table>
+      </div>
+
       <!-- Product Table -->
       <form method="post" action="products?action=delete-product">
         <input type="hidden" name="action" value="delete" />
@@ -84,6 +111,14 @@
         </table>
         <button type="submit"><i class="fas fa-trash"></i> Delete Selected</button>
       </form>
+
+      <form method="post" action="products">
+        <input type="hidden" name="action" value="undo-delete-product" />
+        <button type="submit" class="undo-btn">
+          <i class="fas fa-rotate-left"></i> Undo Last Delete
+        </button>
+      </form>
+
     </div>
   </div>
   <script src="./js/main.js"></script>
