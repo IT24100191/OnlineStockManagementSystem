@@ -1,4 +1,4 @@
-<%@ page import="model.Product" %>
+<%@ page import="model.Stock" %>
 <%@ page import="java.util.*" %>
 <%@ page contentType="text/html;charset=UTF-8" %>
 <html>
@@ -136,9 +136,9 @@
             <th>ID</th><th>Name</th><th>Category</th><th>Quantity</th><th>Unit</th><th>Expiry Date</th><th>Actions</th>
         </tr>
         <%
-            List<model.Product> products = (List<model.Product>) request.getAttribute("products");
+            List<Stock> products = (List<Stock>) request.getAttribute("products");
             if (products != null && !products.isEmpty()) {
-                for (model.Product p : products) {
+                for (Stock p : products) {
         %>
         <tr>
             <td><%= p.getId() != null ? p.getId() : "" %></td>
