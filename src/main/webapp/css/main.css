@@ -234,3 +234,11 @@
     font-size: 0.95rem;
     color: #6b7280;
 }
+
+/* container */
+.container {
+    margin-left: 250px;
+    padding: 20px;
+    width: 100%;
+}
+
