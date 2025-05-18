@@ -1,7 +1,8 @@
-package com.stockmanagement.servlet;
+package servlet;
 
-import com.stockmanagement.dao.StockDAO;
-import com.stockmanagement.model.Stock;
+import dao.StockDAO;
+import model.Stock;
+import sort.StockSorter;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -10,8 +11,8 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.time.LocalDate;
 import java.time.format.DateTimeParseException;
-import java.util.*;
-import java.util.stream.Collectors;
+import java.util.ArrayList;
+import java.util.List;
 
 @WebServlet("/stock")
 public class StockServlets extends HttpServlet {
@@ -21,6 +22,7 @@ public class StockServlets extends HttpServlet {
 
     private void displayStockTable(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
         List<Stock> products = StockDAO.readAll();
+        products = StockSorter.sortByExpiryDate(products); // Sort by expiry date
         req.setAttribute("products", products != null ? products : new ArrayList<>());
         req.getRequestDispatcher("stockTable.jsp").forward(req, res);
     }
@@ -42,10 +44,7 @@ public class StockServlets extends HttpServlet {
                 switch (action) {
                     case ANALYSIS:
                         List<Stock> allProducts = StockDAO.readAll();
-                        List<Stock> sortedProducts = allProducts.stream()
-                                .sorted(Comparator.comparing(Stock::getExpiryDate,
-                                        Comparator.nullsLast(Comparator.naturalOrder())))
-                                .collect(Collectors.toList());
+                        List<Stock> sortedProducts = StockSorter.sortByExpiryDate(allProducts); // Use merge sort
 
                         req.setAttribute("sortedProducts", sortedProducts);
                         req.setAttribute("total", sortedProducts.size());
