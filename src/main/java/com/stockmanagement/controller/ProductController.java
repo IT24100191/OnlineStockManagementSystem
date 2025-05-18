@@ -55,6 +55,7 @@ public class ProductController extends HttpServlet {
 
                 request.setAttribute("product", product);
                 request.setAttribute("categoryList", categoryList);
+                request.setAttribute("selectedCategory", product.getCategory());
                 request.setAttribute("exp-date", product.getExpiryDate().toString());
                 request.setAttribute("minDate", LocalDate.now().toString());
                 request.getRequestDispatcher("update-product.jsp").forward(request, response);

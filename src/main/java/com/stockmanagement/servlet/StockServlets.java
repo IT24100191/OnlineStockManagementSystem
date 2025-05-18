@@ -1,8 +1,8 @@
-package servlet;
+package com.stockmanagement.servlet;
 
-import dao.StockDAO;
-import model.Stock;
-import sort.StockSorter;
+import com.stockmanagement.dao.StockDAO;
+import com.stockmanagement.model.Stock;
+import com.stockmanagement.util.StockSorter;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;

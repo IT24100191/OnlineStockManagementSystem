@@ -1,6 +1,6 @@
-package sort;
+package com.stockmanagement.util;
 
-import model.Stock;
+import com.stockmanagement.model.Stock;
 import java.util.ArrayList;
 import java.util.List;
 

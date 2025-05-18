@@ -11,71 +11,12 @@ body {
     color: #1f2937;
 }
 
-/* Sidebar */
-.side-bar {
-    width: 250px;
-    background-color: #1f2937;
-    min-height: 100vh;
-    padding: 20px;
-    color: #fff;
-    position: fixed;
-}
-
-.menu-heading {
-    font-size: 1.5rem;
-    font-weight: bold;
-    margin-bottom: 30px;
-    color: #3b82f6;
-}
-
-.item .sub-btn {
-    display: block;
-    font-size: 1.1rem;
-    padding: 12px 15px;
-    background: #374151;
-    color: #fff;
-    border-radius: 8px;
-    margin-bottom: 10px;
-    cursor: pointer;
-    transition: background 0.3s;
-}
-
-.item .sub-btn:hover {
-    background: #4b5563;
-}
-
-.sub-menu a {
-    display: block;
-    padding: 10px 20px;
-    color: #d1d5db;
-    text-decoration: none;
-    border-left: 4px solid transparent;
-    transition: all 0.3s;
-}
-
-.sub-menu a:hover {
-    color: #fff;
-    background-color: #6b7280;
-    border-left: 4px solid #3b82f6;
-}
-
 /* Container */
 .container {
     margin-left: 250px;
     padding: 20px;
     width: 100%;
 }
-
-/* Navbar */
-.navbar {
-    background-color: #ffffff;
-    padding: 15px 25px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-    margin-bottom: 30px;
-    font-size: 0.95rem;
-    color: #6b7280;
-}
-
 /* Content */
 .content-container {
     background-color: #ffffff;

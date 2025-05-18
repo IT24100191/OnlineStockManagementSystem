@@ -12,6 +12,7 @@
   <head>
     <meta charset="UTF-8">
     <title>Product Dashboard</title>
+    <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="./css/list-products.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   </head>
@@ -78,7 +79,7 @@
       <!-- Product Table -->
       <form method="post" action="products?action=delete-product">
         <input type="hidden" name="action" value="delete" />
-        <table>
+        <table class="product-table">
           <thead>
           <tr>
             <th>Select</th>

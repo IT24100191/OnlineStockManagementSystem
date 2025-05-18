@@ -10,6 +10,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <link rel="stylesheet" href="css/main.css">
   <link rel="stylesheet" href="./css/add-product.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <title>Add Product</title>

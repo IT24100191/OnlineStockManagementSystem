@@ -16,3 +16,14 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     });
 });
+
+document.addEventListener('DOMContentLoaded', () => {
+    const subBtns = document.querySelectorAll('.sub-btn');
+
+    subBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            const item = btn.closest('.item');
+            item.classList.toggle('open');
+        });
+    });
+});
