@@ -1,4 +1,4 @@
-<%@ page import="model.Stock" %>
+<%@ page import="com.stockmanagement.model.Stock" %>
 <%@ page import="java.util.*" %>
 <%@ page import="java.time.LocalDate" %>
 <%@ page contentType="text/html;charset=UTF-8" %>

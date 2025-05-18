@@ -1,7 +1,7 @@
-package servlet;
+package com.stockmanagement.servlet;
 
-import dao.StockDAO;
-import model.Stock;
+import com.stockmanagement.dao.StockDAO;
+import com.stockmanagement.model.Stock;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -11,6 +11,7 @@ import java.io.IOException;
 import java.time.LocalDate;
 import java.time.format.DateTimeParseException;
 import java.util.*;
+import java.util.stream.Collectors;
 
 @WebServlet("/stock")
 public class StockServlets extends HttpServlet {
@@ -44,7 +45,7 @@ public class StockServlets extends HttpServlet {
                         List<Stock> sortedProducts = allProducts.stream()
                                 .sorted(Comparator.comparing(Stock::getExpiryDate,
                                         Comparator.nullsLast(Comparator.naturalOrder())))
-                                .toList();
+                                .collect(Collectors.toList());
 
                         req.setAttribute("sortedProducts", sortedProducts);
                         req.setAttribute("total", sortedProducts.size());

@@ -1,6 +1,9 @@
 package com.stockmanagement.controller;
 
+import com.stockmanagement.model.Category;
 import com.stockmanagement.model.Product;
+import com.stockmanagement.service.CategoryService;
+import com.stockmanagement.service.IProductService;
 import com.stockmanagement.service.ProductService;
 import com.stockmanagement.util.RecentProductStack;
 import com.stockmanagement.util.UndoDeleteStack;
@@ -19,9 +22,11 @@ import java.util.List;
 
 @WebServlet("/products")
 public class ProductController extends HttpServlet {
-    private final ProductService service = new ProductService();
+    private final IProductService service = new ProductService();
+    private final CategoryService categoryService = new CategoryService();
 
     private List<Product> products = new ArrayList<>();
+    private List<Category> categoryList = new ArrayList<>();
     private RecentProductStack recentStack = new RecentProductStack(5);
     private UndoDeleteStack undoStack = new UndoDeleteStack();
 
@@ -34,6 +39,11 @@ public class ProductController extends HttpServlet {
 
         String id;
         switch (action) {
+            case "add-product":
+                categoryList = categoryService.getAllCategories();
+                request.setAttribute("categoryList", categoryList);
+                request.getRequestDispatcher("add-product.jsp").forward(request, response);
+                break;
             case "update-product":
                 id = request.getParameter("id");
                 Product product = service.getProductById(id);
@@ -41,8 +51,10 @@ public class ProductController extends HttpServlet {
                     response.sendRedirect("products");
                     return;
                 }
-                System.out.println(product.getExpiryDate().toString());
+                categoryList = categoryService.getAllCategories();
+
                 request.setAttribute("product", product);
+                request.setAttribute("categoryList", categoryList);
                 request.setAttribute("exp-date", product.getExpiryDate().toString());
                 request.setAttribute("minDate", LocalDate.now().toString());
                 request.getRequestDispatcher("update-product.jsp").forward(request, response);

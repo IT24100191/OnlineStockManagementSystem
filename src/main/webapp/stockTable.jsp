@@ -1,4 +1,4 @@
-<%@ page import="model.Stock" %>
+<%@ page import="com.stockmanagement.model.Stock" %>
 <%@ page import="java.util.*" %>
 <%@ page contentType="text/html;charset=UTF-8" %>
 <html>

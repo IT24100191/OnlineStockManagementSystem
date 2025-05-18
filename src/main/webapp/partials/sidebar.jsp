@@ -15,5 +15,17 @@
         <a href="products">Products</a>
       </div>
     </div>
+    <div class="item">
+      <a class="sub-btn">Category Management</a>
+      <div class="sub-menu">
+        <a href="categories/view">Categories</a>
+      </div>
+    </div>
+    <div class="item">
+      <a class="sub-btn">Stock Management</a>
+      <div class="sub-menu">
+        <a href="stock">Stock Records</a>
+      </div>
+    </div>
   </div>
 </div>

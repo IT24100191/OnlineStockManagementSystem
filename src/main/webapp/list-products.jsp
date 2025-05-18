@@ -25,7 +25,7 @@
 
     <div class="content-container">
       <div class="add-btn-wrapper">
-        <a href="${pageContext.request.contextPath}/add-product.jsp" class="add-btn">
+        <a href="products?action=add-product" class="add-btn">
           <i class="fas fa-plus-circle"></i> Add New Product
         </a>
       </div>

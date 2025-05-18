@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
   User: sanuja
@@ -36,8 +37,9 @@
       <div class="form-group">
         <label>Category</label>
         <select name="category">
-          <option value="Snacks">Snacks</option>
-          <option value="Beverage">Beverages</option>
+          <c:forEach var="cat" items="${categoryList}">
+            <option value="${cat.getName()}">${cat.getName()}</option>
+          </c:forEach>
         </select>
       </div>
 
