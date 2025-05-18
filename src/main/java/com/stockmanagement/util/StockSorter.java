@@ -1,13 +1,13 @@
-package sort;
+package com.stockmanagement.util;
 
-import model.Stock;
+import com.stockmanagement.model.Stock;
 import java.util.ArrayList;
 import java.util.List;
 
 public class StockSorter {
     public static List<Stock> sortByExpiryDate(List<Stock> stocks) {
-        if (stocks == null || stocks.size() <= 1) return stocks; // No sort needed
-        List<Stock> copy = new ArrayList<>(stocks); // Don’t mess with original list
+        if (stocks == null || stocks.size() <= 1) return stocks; 
+        List<Stock> copy = new ArrayList<>(stocks); 
         mergeSort(copy, 0, copy.size() - 1);
         return copy;
     }
