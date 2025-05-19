@@ -1,6 +1,6 @@
-package util;
+package com.stockmanagement.util;
 
-import model.Supplier;
+import com.stockmanagement.model.Supplier;
 import java.io.*;
 import java.util.*;
 

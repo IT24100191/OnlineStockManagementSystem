@@ -1,4 +1,4 @@
-<%@ page import="model.Supplier" %>
+<%@ page import="com.stockmanagement.model.Supplier" %>
 <%
     Supplier supplier = (Supplier) request.getAttribute("supplier");
     if (supplier == null) {

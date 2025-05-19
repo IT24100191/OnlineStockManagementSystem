@@ -1,7 +1,7 @@
-package controller;
+package com.stockmanagement.controller;
 
-import util.SupplierFileUtil;
-import model.Supplier;
+import com.stockmanagement.util.SupplierFileUtil;
+import com.stockmanagement.model.Supplier;
 
 import javax.servlet.*;
 import javax.servlet.http.*;

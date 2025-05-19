@@ -1,4 +1,4 @@
-<%@ page import="model.Supplier" %>
+<%@ page import="com.stockmanagement.model.Supplier" %>
 <%@ page import="java.util.List" %>
 <%
     List<Supplier> supplierList = (List<Supplier>) request.getAttribute("supplierList");
