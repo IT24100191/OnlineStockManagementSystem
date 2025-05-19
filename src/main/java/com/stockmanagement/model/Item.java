@@ -1,4 +1,4 @@
-package model;
+package com.stockmanagement.model;
 
 public class Item {
     private String id;
