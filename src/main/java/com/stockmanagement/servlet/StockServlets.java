@@ -1,8 +1,10 @@
 package com.stockmanagement.servlet;
 
+import com.stockmanagement.dao.StockRepository;
 import com.stockmanagement.dao.StockDAO;
 import com.stockmanagement.model.Stock;
-import com.stockmanagement.util.StockSorter;
+import com.stockmanagement.sort.StockSorter;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -16,13 +18,16 @@ import java.util.List;
 
 @WebServlet("/stock")
 public class StockServlets extends HttpServlet {
+
     private enum Action {
         ADD, UPDATE, DELETE, CHANGE_QTY, ANALYSIS, CHECK_ID
     }
 
+    private StockRepository stockRepository = new StockDAO();
+
     private void displayStockTable(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
-        List<Stock> products = StockDAO.readAll();
-        products = StockSorter.sortByExpiryDate(products); // Sort by expiry date
+        List<Stock> products = stockRepository.readAll();
+        products = StockSorter.sortByExpiryDate(products);
         req.setAttribute("products", products != null ? products : new ArrayList<>());
         req.getRequestDispatcher("stockTable.jsp").forward(req, res);
     }
@@ -43,8 +48,8 @@ public class StockServlets extends HttpServlet {
             try {
                 switch (action) {
                     case ANALYSIS:
-                        List<Stock> allProducts = StockDAO.readAll();
-                        List<Stock> sortedProducts = StockSorter.sortByExpiryDate(allProducts); // Use merge sort
+                        List<Stock> allProducts = stockRepository.readAll();
+                        List<Stock> sortedProducts = StockSorter.sortByExpiryDate(allProducts);
 
                         req.setAttribute("sortedProducts", sortedProducts);
                         req.setAttribute("total", sortedProducts.size());
@@ -66,7 +71,7 @@ public class StockServlets extends HttpServlet {
                             res.sendError(HttpServletResponse.SC_BAD_REQUEST, "ID is required");
                             return;
                         }
-                        boolean idExists = StockDAO.readAll().stream().anyMatch(p -> p.getId().equals(id));
+                        boolean idExists = stockRepository.readAll().stream().anyMatch(p -> p.getId().equals(id));
                         res.setContentType("text/plain");
                         res.getWriter().write(String.valueOf(idExists));
                         return;
@@ -77,7 +82,6 @@ public class StockServlets extends HttpServlet {
                 return;
             }
         }
-
         displayStockTable(req, res);
     }
 
@@ -111,7 +115,7 @@ public class StockServlets extends HttpServlet {
                     if (id == null || name == null || category == null || quantityStr == null || unit == null || expiryDateStr == null ||
                             id.isEmpty() || name.isEmpty() || category.isEmpty() || quantityStr.isEmpty() || unit.isEmpty() || expiryDateStr.isEmpty()) {
                         req.setAttribute("error", "All fields are required");
-                        req.setAttribute("products", StockDAO.readAll());
+                        req.setAttribute("products", stockRepository.readAll());
                         req.getRequestDispatcher("addStock.jsp").forward(req, res);
                         return;
                     }
@@ -121,13 +125,13 @@ public class StockServlets extends HttpServlet {
                         quantity = Integer.parseInt(quantityStr);
                         if (quantity < 0) {
                             req.setAttribute("error", "Quantity cannot be negative");
-                            req.setAttribute("products", StockDAO.readAll());
+                            req.setAttribute("products", stockRepository.readAll());
                             req.getRequestDispatcher("addStock.jsp").forward(req, res);
                             return;
                         }
                     } catch (NumberFormatException e) {
                         req.setAttribute("error", "Invalid quantity format");
-                        req.setAttribute("products", StockDAO.readAll());
+                        req.setAttribute("products", stockRepository.readAll());
                         req.getRequestDispatcher("addStock.jsp").forward(req, res);
                         return;
                     }
@@ -137,13 +141,13 @@ public class StockServlets extends HttpServlet {
                         expiryDate = LocalDate.parse(expiryDateStr);
                     } catch (DateTimeParseException e) {
                         req.setAttribute("error", "Invalid expiry date format (expected: YYYY-MM-DD)");
-                        req.setAttribute("products", StockDAO.readAll());
+                        req.setAttribute("products", stockRepository.readAll());
                         req.getRequestDispatcher("addStock.jsp").forward(req, res);
                         return;
                     }
 
                     Stock newProduct = new Stock(id, name, category, quantity, unit, expiryDate);
-                    StockDAO.addProduct(newProduct);
+                    stockRepository.addProduct(newProduct);
                     res.sendRedirect("stock");
                     return;
 
@@ -167,7 +171,7 @@ public class StockServlets extends HttpServlet {
                         break;
                     }
 
-                    StockDAO.updateQuantity(id, soldQty);
+                    stockRepository.updateQuantity(id, soldQty);
                     req.setAttribute("message", "Stock updated successfully!");
                     break;
 
@@ -177,7 +181,7 @@ public class StockServlets extends HttpServlet {
                         req.setAttribute("error", "Product ID is required");
                         break;
                     }
-                    StockDAO.deleteProduct(id);
+                    stockRepository.deleteProduct(id);
                     req.setAttribute("message", "Product deleted successfully!");
                     break;
 
@@ -200,22 +204,23 @@ public class StockServlets extends HttpServlet {
                             return;
                         }
                     } catch (NumberFormatException e) {
-                        req.setAttribute("error", "Invalid quantity format");
+                        req.setAttribute("error", "Invalid new quantity format");
                         displayStockTable(req, res);
                         return;
                     }
 
-                    StockDAO.changeQuantity(id, newQty);
-                    res.sendRedirect("stock");
-                    return;
+                    stockRepository.changeQuantity(id, newQty);
+                    req.setAttribute("message", "Quantity changed successfully!");
+                    break;
+
+                default:
+                    req.setAttribute("error", "Unsupported action");
+                    break;
             }
         } catch (Exception e) {
-            req.setAttribute("error", "Operation failed: " + e.getMessage());
-            req.getRequestDispatcher("error.jsp").forward(req, res);
-            return;
+            req.setAttribute("error", "An error occurred: " + e.getMessage());
         }
 
         displayStockTable(req, res);
     }
-
 }
